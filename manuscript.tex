@@ -1,0 +1,489 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\usepackage{caption}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={The role of emotional factors in face processing abilities in Autism Spectrum Conditions},
+  pdfauthor={Natasha Baxter \& Hannah Hobson},
+  colorlinks=true,
+  linkcolor={black},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{The role of emotional factors in face processing abilities in Autism Spectrum Conditions}
+\author{Natasha Baxter \& Hannah Hobson}
+\date{Department of Psychology, University of York, YO10 5DD}
+
+\begin{document}
+\maketitle
+
+Corresponding author: Natasha Baxter
+
+Email: \url{nb1139@york.ac.uk}
+
+Postal Address: Natasha Baxter, Department of Psychology, University of York, York, YO10 5DD
+
+\hypertarget{abstract}{%
+\section*{Abstract}\label{abstract}}
+\addcontentsline{toc}{section}{Abstract}
+
+Facial emotion recognition is considered atypical in individuals with autism spectrum conditions (ASC), but emotion recognition abilities vary widely in autistic people, and there are inconsistent findings on the causes of these differences. Research indicates alexithymia may result in facial emotion recognition differences in ASC. Alternatively, mood disorders have been linked to atypical facial emotional expression recognition abilities in neurotypical adults. Research investigating both the effects of alexithymia and mood disorders (depression and anxiety) is necessary to establish which of these factors may cause atypical facial emotion recognition in ASC. This study aimed to examine whether alexithymia or mood disorder symptomology is a predictor of atypical facial emotion recognition in individuals with ASC. Ninety eight non-autistic adults and 80 autistic adults were recruited. Participants completed an online facial processing task to examine emotion and identity recognition abilities, the AQ-28, the TAS-20, and the HADS to measure autism severity, alexithymia symptoms, and depression and anxiety symptoms. Regression-based analyses found that autistic traits and autistic group membership did not predict face processing abilities after accounting for demographic variables, alexithymia and mood disorder symptomatology: however, neither alexithymia nor mood disorder symptoms predicted variance in face processing abilities either. Analyses using a newly proposed reduced TAS measure did not change these findings, neither did analyses that considered the role of self-identification of autism versus formal diagnosis. Our results concur with previous meta-analyses of face processing in autism spectrum disorder which report that studies do not always report deficits in face processing in autism: our findings are also not supportive of the model that argues that alexithymia explains face processing difficulties in autism.
+
+\emph{Key words- Autism Spectrum Disorder, Facial Emotion Recognition, Alexithymia, Depression, Anxiety}.
+
+\hypertarget{introduction}{%
+\section*{Introduction}\label{introduction}}
+\addcontentsline{toc}{section}{Introduction}
+
+One of the core features of Autism Spectrum Conditions (hereafter ASC) is atypical social communication. The nature of these differences has been argued to include problems with facial processing and decreased ability in recognising other individuals' emotions from their facial expressions, which can cause difficulties in socio-emotional abilities (\protect\hyperlink{ref-ko2018a}{Ko, 2018}; \protect\hyperlink{ref-loth2018a}{Loth et al., 2018}). Indeed, previous research suggests that facial emotion recognition in autistic individuals may be reduced or atypical, relative to neurotypical individuals (\protect\hyperlink{ref-nomi2015a}{Nomi and Uddin, 2015}).
+
+However, research on facial emotion recognition in autism has provided inconsistent results. Some studies have found that there is a reduced accuracy in identifying emotions, particularly negative emotions (\protect\hyperlink{ref-ashwin2006a}{Ashwin et al., 2006}; \protect\hyperlink{ref-bal2010a}{Bal et al., 2010}; \protect\hyperlink{ref-corden2008a}{Corden et al., 2008}; \protect\hyperlink{ref-howard2000a}{Howard et al., 2000}; \protect\hyperlink{ref-uljarevic2013a}{Uljarevic and Hamilton, 2013}; \protect\hyperlink{ref-wallace2008a}{Wallace et al., 2008}). Meanwhile, other research has shown that in groups of individuals with ASC without intellectual disability, facial emotion recognition does not seem to be impaired (\protect\hyperlink{ref-adolphs2001a}{Adolphs et al., 2001}; \protect\hyperlink{ref-baron-cohen1997a}{Baron-Cohen et al., 1997}; \protect\hyperlink{ref-loveland2008a}{Loveland et al., 2008}; \protect\hyperlink{ref-neumann2006a}{Neumann et al., 2006}; \protect\hyperlink{ref-ogai2003a}{Ogai et al., 2003}; \protect\hyperlink{ref-rutherford2008a}{Rutherford and Towns, 2008}; \protect\hyperlink{ref-teunisse2001a}{Teunisse and Gelder, 2001}). Meta-analyses have however suggested that sample IQ does not determine whether an emotion recognition deficit is observed (\protect\hyperlink{ref-uljarevic2013a}{Uljarevic and Hamilton, 2013}); this same analysis concluded that while there was evidence for decreased emotion recognition abilities in ASC, there was evidence of publication bias and substantial heterogeneity.
+
+This heterogeneity of research findings may reflect heterogeneity within the autistic population with regards to emotion processing. While a study by Loth et al. (\protect\hyperlink{ref-loth2018a}{2018}) indicated that the majority of individuals with ASC have atypical facial expression recognition, some do not display these differences. Therefore, further research is required to establish the differences between those individuals with ASC displaying facial emotion recognition impairments and those who do not display atypical emotion recognition (\protect\hyperlink{ref-sato2017a}{Sato et al., 2017}). Candidate factors that could differentiate those with autism and emotion recognition differences from autistic individuals without these problems include alexithymia or mood disorders.
+
+\hypertarget{alexithymia-mood-disorders-and-emotion-recognition-in-asc}{%
+\subsection*{Alexithymia, mood disorders and emotion recognition in ASC}\label{alexithymia-mood-disorders-and-emotion-recognition-in-asc}}
+\addcontentsline{toc}{subsection}{Alexithymia, mood disorders and emotion recognition in ASC}
+
+Recent research suggests that alexithymia may play a role in facial emotion recognition in ASC. Alexithymia is characterised by the inability to identify emotions experienced by the self and others (\protect\hyperlink{ref-sifneos1973a}{Sifneos, 1973}), and frequently co-occurs with ASC. Oakley et al. (\protect\hyperlink{ref-oakley2020a}{2020}) report that many individuals with ASC report higher levels of alexithymia, with 47.3\% of autistic females and 21.0\% of autistic males meeting the cut-off for clinically relevant alexithymia. Kinnaird et al. (\protect\hyperlink{ref-kinnaird2019a}{2019}) suggest that emotional processing differences in ASC may reflect co-occurring alexithymia and that while alexithymia is common in ASC, it is not universal, which reflects the heterogenous nature of ASC. Alexithymia has been linked to atypical activation of the anterior insula, and in fMRI studies investigating empathy in ASC, hypo-activation of the anterior insula was associated with difficulties in emotional awareness (\protect\hyperlink{ref-silani2008a}{Silani et al., 2008}). This suggests there may even be differences at the neural level between neurotypical individuals, and those with ASC, which may lead to variation in their ability to perform emotion-related tasks.
+
+The effect of alexithymia on emotion recognition has been investigated but mixed results have been found. Cook et al. (\protect\hyperlink{ref-cook2013a}{2013}) found that autism severity was unrelated to expression-recognition ability, while alexithymia predicted facial emotion recognition abilities. This suggests co-occurring alexithymia may be responsible for atypical facial emotional expression recognition in ASC. However, Shah et al. (\protect\hyperlink{ref-shah2019a}{2019}) challenges whether alexithymia plays a role in atypical emotional processing in autism. They found that autistic traits was more of a predictor than alexithymia of atypical empathy. However, given that they looked at empathy, rather than emotional processing, this point of difference between these two papers could be due the focus on different socio-emotional abilities: future research is needed to clarify the effect of alexithymia on emotional face processing and empathy.
+
+Additionally, the conflicting findings may be explained by the different research designs employed by the researchers. Shah et al. (\protect\hyperlink{ref-shah2019a}{2019}) argues that a matched approach, such as that used by Cook et al. (\protect\hyperlink{ref-cook2013a}{2013}), can suffer from biased sampling. In the case of alexithymia research, a biased sample can occur when using a matched design as alexithymia is more present in autistic populations compared to non-autistic populations (50\% versus 5\%, Kinnaird et al. (\protect\hyperlink{ref-kinnaird2019a}{2019})). As the prevalence of alexithymia in the autistic population is considerably higher than in the typically developed population, Cook et al.'s control sample does not match the proportion of alexithymia in the population, and can be considered to have a high number of people with high alexithymia traits in the non-clinical sample, and these high levels of alexithymia may be linked to other factors that influence the research such as interpersonal issues and mental health conditions. Shah et al. (\protect\hyperlink{ref-shah2019a}{2019}) states that matched groups are difficult to be truly representative of their respective populations and that this can result in inaccurate statistical comparisons and population-level inferences. Furthermore, Shah et al. (\protect\hyperlink{ref-shah2019a}{2019}) noted issues within this field of research such as small sample sizes lacking statistical power. They conclude that larger samples with sufficient statistical power examining the potential predictors of atypical emotional abilities in autism would be beneficial to future research.
+
+There are additional issues with alexithymia and autism research, regarding the measures used to measure these constructs. As discussed in Ruzich et al. (\protect\hyperlink{ref-ruzich2015a}{2015}), while the AQ measures are commonly used in research and in practice as screening instruments, arguably this measure does not have suitable sensitivity and specificity for population screening of autism per se. Thus, those who score ``above threshold'' on the AQ may not be considered ``autistic''. Furthermore, there have been issues with incorrect cut-off values being used for the AQ-10, and this has had implications for research, as it significantly affected the effect sizes reported by research into the relationship between autism and behaviours of interest (\protect\hyperlink{ref-waldren2022a}{Waldren et al., 2022}). This suggests that researchers must be aware that thresholds may be too lenient (or stringent), and ensure that the correct threshold is used appropriately. In addition, the psychometric properties of the original TAS-20 alexithymia measure have been questioned: while the TAS-20 has been argued to be a reliable measure of alexithymia in typically developed and clinical populations (\protect\hyperlink{ref-bagby1994a}{Bagby et al., 1994}, \protect\hyperlink{ref-bagby1994a}{1994}; \protect\hyperlink{ref-cook2013a}{Cook et al., 2013}), others have argued the original proposed TAS-20 model was not adequate for either autistic or typically developed populations (\protect\hyperlink{ref-williams2021a}{Williams and Gotham, 2021}). Williams and Gotham (\protect\hyperlink{ref-williams2021a}{2021}) used the factor analysis to reduce the items of the TAS-20 to eight items (the 8-item general alexithymia factor score, the GAFS-8), and found sound psychometric properties and that the GAFS-8 did predict alexithymia traits without any deficiencies in validity. This suggests that the GAFS-8 may be a more suitable measure to be used instead of the TAS-20, but there has yet to be investigation into how these measures compare in their prediction of socioemotional abilities, such as emotional face recognition.
+
+There are other factors that may be responsible for emotion recognition differences in ASC such as mood disorders including anxiety and depression. Mental health conditions such as depression and anxiety are common in autism, the lifetime prevalence being estimated at 42\% for anxiety and 37\% for depression (\protect\hyperlink{ref-hollocks2019a}{Hollocks et al., 2019}; \protect\hyperlink{ref-skokauskas2010a}{Skokauskas and Gallagher, 2010}). Research has shown that depression and anxiety are associated with atypical facial emotional expression recognition abilities in non-autistic adults (\protect\hyperlink{ref-demenescu2010a}{Demenescu et al., 2010}; \protect\hyperlink{ref-skokauskas2010a}{Skokauskas and Gallagher, 2010}; \protect\hyperlink{ref-stewart2006a}{Stewart et al., 2006}). Demenescu et al. (\protect\hyperlink{ref-demenescu2010a}{2010}) found that adults with anxiety displayed significant decreased abilities in emotional expression recognition (Cohen's d=-0.35) and that depression was associated with a larger display of decreased ability in emotion recognition (d=-0.58). Additionally, Torro-Alves et al. (\protect\hyperlink{ref-torro-alves2016a}{2016}) found that individuals with high social anxiety had poorer facial emotion recognition particularly in ambiguous and low intensity presentations of facial emotional stimuli. While there is research establishing the prevalence of anxiety and depression, there is a paucity of research specifically investigating the effect of depression and anxiety on facial emotion recognition abilities in autistic individuals. Potentially, depression and anxiety will affect facial emotion recognition in a similar way to non-autistic individuals, but whether they have an independent effect or exacerbate existing atypical facial emotion recognition in ASC requires investigation (\protect\hyperlink{ref-oakley2020a}{Oakley et al., 2020}).
+
+Mood disorders and alexithymia may also interact in ASC, and there is existing evidence to suggest relationships between depression, anxiety and alexithymia. Alexithymia and mood disorders have a close relationship, as alexithymia may be related to atypical emotion regulation, and evidence suggests alexithymia may mediate the relationship between anxiety, depression, and autism (\protect\hyperlink{ref-morie2019a}{Morie et al., 2019}; \protect\hyperlink{ref-venta2013a}{Venta et al., 2013}). Indeed, as research demonstrates that both alexithymia and mood disorders have overlapping symptomology and are often co-occurring, the distinctness of the traits of these conditions and how they can be effectively measures is questioned. However, research by Marchesi et al. (\protect\hyperlink{ref-marchesi2000a}{2000}) has clarified that alexithymia, anxiety and depression are separate constructs through a factor analysis of the TAS-20 (Toronto Alexithymia Scale, \protect\hyperlink{ref-bagby1994a}{Bagby et al., 1994}) and the HADS (the Hospital Anxiety and Depression scale, \protect\hyperlink{ref-zigmond1983a}{Zigmond and Snaith, 1983}).
+
+Alexithymia has been shown to be high in autistic individuals, but is also associated with mood disorders such as anxiety and depression in those without ASC (\protect\hyperlink{ref-honkalampi2000a}{Honkalampi et al., 2000}; \protect\hyperlink{ref-karukivi2010a}{Karukivi et al., 2010}). The relationship between alexithymia and co-occurring depression or anxiety may be explained by evidence suggesting individuals with these co-occurring conditions have lower emotional intelligence, which may also have implications for differences in facial emotion recognition abilities (\protect\hyperlink{ref-onur2013a}{Onur et al., 2013}). Morie et al. (\protect\hyperlink{ref-morie2019a}{2019}) suggest that individuals with ASC are more likely than the neurotypical population to have alexithymia, and that alexithymia may affect emotional processes (such as regulation), leading to increased possibility of mood disorders. Whether alexithymia or a mood disorder then contributes to atypical emotion recognition in ASC is of interest to the current study.
+
+While evidence suggests alexithymia and mood disorders are related to atypical facial emotion recognition, more research is needed to establish the independent effects alexithymia, mood disorders, and traits of ASC have on facial emotion recognition. Additionally, research into alexithymia and mood disorders in autism will provide insights that could help tailor interventions (\protect\hyperlink{ref-kinnaird2019a}{Kinnaird et al., 2019}).
+
+Berggren et al. (\protect\hyperlink{ref-berggren2018a}{2018}) conducted a systematic review investigating emotion recognition training for autistic individuals. They found that while emotion recognition training improved emotion recognition in some of the studies, the generalisability of the training to normal daily life and social activities was unclear. While emotion recognition training likely benefits some individuals, perhaps targeting differences in emotion recognition is not effective for all. Indeed, if mood disorder symptomatology is highly predictive of atypical emotion recognition in autism, this would question the approach of interventions that train emotion recognition, instead suggesting that interventions targeting depression or anxiety would be perhaps doubly effective, in both relieving the mood disorder symptoms, and having positive effects on social emotional cognition.
+
+\hypertarget{aims-of-this-study}{%
+\subsection*{Aims of this study}\label{aims-of-this-study}}
+\addcontentsline{toc}{subsection}{Aims of this study}
+
+The aim of this study is to investigate the extent to which co-occurring alexithymia and/or a mood disorder symptomatology predict atypical facial emotion recognition in individuals with autism. Previous research indicates that alexithymia has an effect on facial emotion recognition abilities in autism (\protect\hyperlink{ref-cook2013a}{Cook et al., 2013}). However, research investigating the effects of mood disorders has mainly focused on typically developed samples. Therefore, for this study we aim to use both a sample of adults with ASC and a sample of non-autistic adults as our sample to establish the effects of anxiety and depression on facial emotion recognition abilities.
+
+Our research is based on a study by Cook et al. (\protect\hyperlink{ref-cook2013a}{2013}), in which they investigated co-occurring alexithymia and facial emotion recognition ability in individuals with autism, finding that autism severity was not related to expression recognition while alexithymia correlated strongly. We aim to replicate their findings with alexithymia but also investigate whether co-morbid mood disorders such as anxiety and depression may account for the differences in facial emotion expression recognition, specifically the ability to distinguish disgust from anger. Additionally, as alexithymia, anxiety and depression have overlapping traits (one can also argue that ASC has some overlapping symptomology as well), whether a combination of both alexithymia and mood disorders further exacerbates atypical emotion recognition is of interest.
+
+\hypertarget{method}{%
+\section*{Method}\label{method}}
+\addcontentsline{toc}{section}{Method}
+
+\hypertarget{pre-existing-non-autistic-data}{%
+\subsection*{Pre-existing non-autistic data}\label{pre-existing-non-autistic-data}}
+\addcontentsline{toc}{subsection}{Pre-existing non-autistic data}
+
+Our project includes data from both non-autistic and autistic individuals. In order to establish the feasibility of the task and procedure, the non-autistic data were collected in accordance with a preregistered protocol (available to view here: \url{https://osf.io/wjvne}), prior to registration with the journal. Our methodological details here encompass both what was collected for non-autistic and autistic participant group. While we used comparable tasks and measures to those of Cook et al. (\protect\hyperlink{ref-cook2013a}{2013}), as noted by Shah et al. (\protect\hyperlink{ref-shah2019a}{2019}) there are problems with a matched group approach to alexithymia research, and thus we opted to recruit a large sample and use regression-based analyses to ensure we have sufficient power and can examine the predictors of atypical facial emotion processing.
+
+\hypertarget{participants}{%
+\subsection*{Participants}\label{participants}}
+\addcontentsline{toc}{subsection}{Participants}
+
+The non-autistic group was recruited via social media, `word of mouth', and via Prolific. We aimed to collect 100 non-autistic participants, and had 119 complete datasets. However, 21 were removed due to being incomplete, or failing an attention check measure. This means that data from a sample of 98 non-autistic adults was been collected in a previous study using the same methods, materials and experimental design. This sample serves as a comparison group to the autistic sample. For the preliminary results drawn from the non-autistic group only (and which featured in the Stage 1 version of this report) see ``Results from the non-autistic sample -- Preregistered analyses'' in the Supplementary Materials.
+
+To be comparable to the data collected from this control group, we aimed to collect complete datasets from at least 100 autistic people (see our Power analysis section for considerations on potential data loss). During data collection, it was discovered that a number of recruited individuals were suspected to be fraudulent participants: this was due to an autism organization sharing the online link to take part in the study directly without having to contact the research team. Data gathered during this period of recruitment is not included in the study as a high number of participants' emails and addresses (collected for reimbursement purposes) were deemed to be suspicious. This unfortunately had a knock on effect on our ability to meet out intended recruitment target, due to resource constraints. In the end, we successfully collected 80 autistic data sets. Even when outliers were removed, we achieved our minimum power requirements for 73 autistic datasets for each regression conducted.
+
+Similar methods were used to recruit our autistic sample, with the exception of Prolific, plus via the Autistica research network. Participants needed to be aged 18 years and over. Both participants with clinically diagnosed ASC or those who self-identify as autistic were welcomed into the study: we recognise that for certain individuals a formal diagnosis can be hard to obtain, especially in adults and females, as females tend to present differently to males, and ASC may be `missed' in adults who were not identified as children (\protect\hyperlink{ref-gould2011a}{Gould and Ashton-Smith, 2011}; \protect\hyperlink{ref-murphy2016a}{Murphy et al., 2016}). Therefore, we invited invite both individuals who self-identify as autistic, and those who have received a formal diagnosis to participate. Participants were asked whether they have received a formal diagnosis or self-identify as autistic, to establish whether self-identification is associated with our variables of interest.
+
+Table 1 summarises the participants' characteristics.
+
+\hypertarget{tasks-and-materials}{%
+\subsection*{Tasks and materials}\label{tasks-and-materials}}
+\addcontentsline{toc}{subsection}{Tasks and materials}
+
+\emph{Face processing task}
+
+Many forms of facial recognition tests and stimuli have been developed and used in previous research to measure facial emotion recognition. Our stimuli have been selected from previous research by Cook et al. (\protect\hyperlink{ref-cook2013a}{2013}), a method that allows us to establish whether emotion recognition problems are occurring in the context of more general face processing difficulties, using identical stimuli for both emotion and identity recognition tasks.
+
+The stimuli consisted of 14 images of two morphed faces displaying anger and disgust, a technique originally developed by Calder et al. (\protect\hyperlink{ref-calder1996a}{1996}). The two cross-morph sets comprised of `Harold' displaying anger to `Felix' displaying disgust and `Harold' displaying disgust to `Felix' showing anger. The set began with 80\% intensity of `Harold' displaying anger with 20\% intensity of `Felix' showing disgust. The next image would then be 70\% intensity of `Harold' displaying anger with 30\% intensity of `Felix' showing disgust, and then increasing and decreasing respectively until 80\% intensity for Felix showing disgust and 20\% intensity for `Harold' displaying anger. This was repeated for the other set consisting of `Harold' showing disgust and `Felix' showing anger'. A strength of these stimuli sets is that they can be used to easily control for general face processing problems by checking identity recognition, using the same stimuli for both emotion recognition and identity recognition trials. The cross-morphed stimuli also reflect real-life face and emotion processing as typically both identity and expression are attended to when encountering faces. Measuring identity recognition allowed us to determine whether alexithymia or mood disorders were having an effect on facial processing overall or just facial emotion recognition. Indeed, it has been proposed that there is a link between autism and atypical face processing as research suggests a `diminished level of expertise' for processing faces (\protect\hyperlink{ref-gauthier2009a}{Gauthier et al., 2009}). Of course, only including a disgust-anger morph stimuli set limits the generalizability of the findings to a wider range of emotions; because of the testing time required to gather enough data for our dependent variables, it was thought that including another contrast (e.g.~fear-surprise) would likely impact on recruitment and attrition. It was thus decided to examine disgust-anger only.
+
+Participants first completed a training and practice phase. They were presented with 4 images in succession, Harold being angry, Harold being disgusted, Felix being angry and Felix being disgusted, with the identity and emotion presented stated underneath (e.g.~``This is Harold angry''). In order to test that participants can recognise Harold and Felix, and recognise their emotions when presented at 80\% (the maximum intensity for one emotion and identity, e.g.~80\% Harold and anger, and 20\% Felix and disgust), they were then presented with the same images as before, but with the addition of the keyboard presses that participants use to respond in the experimental trials. These trials gave feedback to the participants, either a red cross indicating they were wrong or a green tick mark to indicate they were correct. They completed eight of these feedback trials. There were then 24 practise trials in the style of the experimental phase (without feedback).
+
+Following the training and practice phase, stimuli were presented in 10 blocks comprising of 28 experimental trials each. The 14 stimuli were presented twice within each block in random order. Trials start with a fixation cross lasting 1500ms. Stimuli are presented for 800ms and are then replaced by a prompt stating either `Harold or Felix?' or `Disgust or Anger'? Between each block, during which participants can take a break, participants were presented with a screen showing the stimuli for the two emotions at 80\% intensity for the two individuals with clear labels for identity and expression.
+
+\emph{Attention check measure}
+
+Given that this study was conducted online away from experimenter supervision, we are including a task to check participants were attending to the screen. A grey star is presented briefly (for 800ms) in certain experimental blocks (specifically blocks 2, 6, and 9). After every block, participants are asked if they saw the star. Only participants who correctly report seeing all grey stars were retained for analyses.
+
+\emph{Questionnaire measures}
+
+Self-report measures were used for capturing autistic traits, alexithymia traits and anxiety and depression symptoms.
+
+The Hospital Anxiety and Depression scale (HADS, \protect\hyperlink{ref-zigmond1983a}{Zigmond and Snaith, 1983}) consists of seven questions for anxiety and seven questions for depression. Depression and anxiety scales are scored separately. The HADS has been shown to perform well in measuring anxiety and depression symptoms in non-clinical samples as well as clinical samples (\protect\hyperlink{ref-bjelland2002a}{Bjelland et al., 2002}), including the identification of anxiety and depression in autistic individuals, with good internal consistency and convergent validity for both the anxiety and depression scales (\protect\hyperlink{ref-uljarevic2013a}{Uljarevic and Hamilton, 2013}). The means, standard deviations and distribution of the HADS data for our data from typically developed adults confirm the measure is normally distributed, with suitable variation in scores that will allow for the exploration of the impacts of anxiety and depression on our variables of interest. For HADS anxiety, M = 10.87 (SD = 2.90). For HADS depression, M = 8.69 (SD = 1.94).
+
+The Toronto Alexithymia Scale (TAS-20, \protect\hyperlink{ref-bagby1994a}{Bagby et al., 1994}) consists of three subscales: difficulty describing feelings (reflected in 5 items), difficulty identifying feeling (7 items), and externally-oriented thinking (8 items). Research has shown that the TAS-20 has construct validity and provided evidence of the TAS-20 as a reliable measure of alexithymia (\protect\hyperlink{ref-bagby1994a}{Bagby et al., 1994}). Research also indicates it is suitable for use with individuals with ASC, showing string test re-test reliability and convergent validity with other measures such as the Bermond-Vorst Alexithymia Questionnaire (\protect\hyperlink{ref-berthoz2005a}{Berthoz and Hill, 2005}; \protect\hyperlink{ref-zech1999a}{Zech et al., 1999}). The TAS-20 has also been previously used in autism and emotion recognition research (e.g. \protect\hyperlink{ref-cook2013a}{Cook et al., 2013}).
+
+The abridged Autism Quotient (AQ-28, \protect\hyperlink{ref-hoekstra2011a}{Hoekstra et al., 2011}) consists of 28 items taken from the AQ-50 (\protect\hyperlink{ref-baron-cohen2001a}{Baron-Cohen et al., 2001}). These 28 items reflect five factors: social skills, routine, switching, imagination, and recognising numbers/patterns. The abridged AQ version still retains high validity as a measure of autism symptomology (\protect\hyperlink{ref-hoekstra2011a}{Hoekstra et al., 2011}), and we determined that a shorter version of the AQ would be suitable for our experimental design in order to decrease fatigue effects and attrition rates.
+
+It should be noted we are not including an IQ measure in this study. Cook et al. (\protect\hyperlink{ref-cook2013a}{2013}) found no effect of IQ, and neither did the meta-analysis performed by Uljarevic and Hamilton (\protect\hyperlink{ref-uljarevic2013a}{2013}); thus, it was decided not to include an IQ measure.
+
+\hypertarget{procedure}{%
+\subsection*{Procedure}\label{procedure}}
+\addcontentsline{toc}{subsection}{Procedure}
+
+Participants read information about the study and only proceeded once consent was given. Participants who took part in the non-autistic study received the same information and consent forms. Ethical approval was given by the ethics board of the Psychology department of the University of York.
+
+Testing was done online using the experiment builder software `Gorilla' (www.gorilla.sc). After reading the information sheet and completing the consent form, participants completed the facial emotion and identity recognition task. Participants first completed the training and feedback phase, to teach the participants what the identity and emotions shown are (`Harold' and `Felix', disgust and anger), then 24 practise trials before beginning the main task. The training and practise trials served only to familiarise participants with the task, and as there are only a small number of practise trials we could not generate the required variables to assess participant performance. Therefore, all participants progressed to the main task after training. After completing the main task, the participants then completed a demographics questionnaire, AQ-28, TAS and HADs. They were also asked if they have been diagnosed with anxiety or depression, and whether they had been diagnosed with ASC or are self-identified. After completing these measures, the participants were debriefed and thanked for their participation. The task and measures lasted approximately 30 to 45 minutes.
+
+\hypertarget{analysis-plan}{%
+\subsection*{Analysis plan}\label{analysis-plan}}
+\addcontentsline{toc}{subsection}{Analysis plan}
+
+Analysis were conducted using MATLAB, and SPSS statistics. The dependent variables for this experiment are the point of subjective equivalence (PSE) which is a measure of bias and details the point on the expression or identity dimension at which participants are equally likely to make either attribution (i.e.~either ``Harold'' or ``Felix'', or ``Anger'' or ``Disgust''), and the attribution threshold which is an index of attribution precision. The attribution data was modelled by fitting cumulative Gaussian functions to estimate the psychometric functions, function fitting will be completed in MATLAB using the Palamedes tool box (\protect\hyperlink{ref-prins2018a}{Prins and Kingdom, 2018}), and separate functions for the expression and identity dimensions were modelled for each participant. The attribution threshold was based on the standard deviation of the Gaussian distribution that best fits the data.
+
+\emph{Pre-registered statistical tests}
+
+To test the contribution of autistic traits, alexithymic traits and mood disorder symptomatology to predicting emotion and identity recognition, we conducted a series of hierarchical regressions. These are summarised in Figure 1.
+
+In regression series 1, we enetered age, gender, and ethnicity entered as predictors in step 1 to control for these broad demographic effects on performance. In step 2, we enetered our alexithymia measure (the TAS-20), and then step three included our anxiety and depressions measures (the HADS), and step 4 included our autism trait measure (the AQ-28). All self-report measures were entered as continuous variables.
+
+While autistic traits have been conceptualised as a continuous trait, along which both autistic and non-autistic individuals vary, it is of course possible that the extent of one's autistic traits may not be as predictive as whether or not one has a clinically significant level of autistic traits. Regression series 2 will test this possibility, taking a categorical approach to the autism variable. In this regression, and we compared the neurotypical comparison group and the autism group in step 4.
+The third regression also took a categorical approach to check if the presence of self-identified autistics influences the model-fit. In this regression series, we included three levels to our group variable: neurotypicals, self-identifying autistic participants, and autistic participants who state that they have a formal diagnosis.
+
+We will planned to include some simple correlational analyses, descriptive statistics, and t-tests to further clarify any group differences, and directions of effect. We also examined the group differences of participants who meet the commonly used threshold for alexithymia (a score of 61 of above on the TAS-20), and those who do not, as previous research indicates we will also find a difference between these groups (\protect\hyperlink{ref-cook2013a}{Cook et al., 2013}). This was done via a series of non-parametric tests, to explore whether those who are above the threshold are associated with higher levels of depression, anxiety, autistic traits, and poor facial emotion and identity recognition.
+
+Additional pre-registered analyses, which are reported in the Supplementary Materials for brevity, were also run. In an further set of regressions, the AQ-28 threshold was used to create a group of autistic participants above the threshold, and also a non-autistic group below the threshold. It seemed possible that including those who self-identify as autistic, while being inclusive of certain groups who may struggle to receive a formal diagnosis, this could affect the results, possibly reducing our effect sizes, if these individuals had reduced autistic characteristics. Therefore, using the AQ-28 threshold, we removed those with high AQ scores in the non-autistic group and those with low AQ scores in the autistic group, and thus created more differentiation between our two samples. This further allowed us to see if including the self-identifying individuals affected the results. We also ran a supplementary analysis using the TAS-8, to determine whether using this shorter alexithymia measure, which has been argued to have improved psychometric properties, can establish the role of alexithymia. Finally, we will perform an additional regression with the identified outliers included, to assess whether by removing outliers, we are also removing theoretically interesting cases as those individuals may have high traits of alexithymia and show the effect of alexithymia on emotional face processing.
+
+\emph{Power analysis}
+
+A previous meta-analysis by Uljarevic and Hamilton (\protect\hyperlink{ref-uljarevic2013a}{2013}) examined emotion recognition in ASC compared to neurotypicals. This analysis reported a large effect size before adjusting for publications bias (which then decreased to a moderate effect size). Additionally, a meta-analysis investigating alexithymia and autism found large to medium effect sizes for between groups differences (neurotypicals and autistics), suggesting a higher prevalence of alexithymia in autistic individuals (\protect\hyperlink{ref-kinnaird2019a}{Kinnaird et al., 2019}). Therefore, previous research indicates that we can expect at least a medium effect size, with regard to emotion recognition and alexithymia comparison between autistic and non-autistic groups. However, a key target for our own study is the extent to which independent predictors add to a model explaining emotion recognition ability, rather than straight forward group comparisons of alexithymia and emotion recognition. Previous research investigating whether alexithymia explains emotion recognition deficits in autistic and non-autistic participants reported a large effect size (\(f^2\) = 0.364), this being the effect size for the variance explained by alexithymia when added to the regression model (\protect\hyperlink{ref-cook2013a}{Cook et al., 2013}). However, given reported concerns over publication bias in emotion recognition and autism research where effects may have been inflated (\protect\hyperlink{ref-uljarevic2013a}{Uljarevic and Hamilton, 2013}), we based our power analysis on a more moderate medium effect size.
+
+A priori analyses were carried out to establish the required sample size for a regression analysis, which will be our core hypothesis-testing statistical procedure. The power analysis was carried out using the software G*Power (\protect\hyperlink{ref-faul2009a}{Faul et al., 2009}), with 1 number of tested predictors and 6 total predictors, and an effect size (\(f^2\)) was 0.15. This power analyses thus tests the power for a predictor to reveal a significant independent contribution to a model, over and above previous entered predictors. Results showed that a sample size of 73 participants would be needed for a significance level of 0.05 and the level of power at 0.90. Also, power analyses states that a sample size of 67 would be required to establish a correlation between emotion recognition and the TAS-20 (the alexithymia measure).
+
+Our first sample of non-autistic participants was a sample of 98 participant, (7 of which were considered outliers in our preliminary analyses). We intended to collect at least 100 complete datasets from our autistic sample, and at least 90 datasets that survive removal due to attention check fails, being an outlier, or poor function fit. As noted in our Participants section above, were were unable to achieve this, but osur final sample was 178 participants, after removing incomplete datasets and individuals who failed the attention check. This sample size should still negate any issues with multi-collinearity, and inflation of previous estimate due to publication bias. As previously noted, we included those who self-identify as autistic in our autistic sample in order to aid in recruiting our goal of at least 100 participants. Also, we did not formally checking participants for their clinical diagnosis: as we cannot verify who has a formal diagnosis of autism, we felt it practical to allow people who self-identify as autistic to take part and just ask them if they are or are not formally diagnosed.
+
+\hypertarget{results}{%
+\section*{Results}\label{results}}
+\addcontentsline{toc}{section}{Results}
+
+As per our pre-registered analysis plan, we conducted all analyses with outliers excluded and included. In the below sections are the results when outliers were excluded (using a Cook's Distance threshold of 0.022, a threshold applied for each regression independently, as Cook's Distances are calculated for each regression separately). Please see the Supplementary Materials for Results with outliers included, but in summary when all participants were included no regression model was significant, at any step or for any dependent variable. While some predictors were correlated with each other (see Table 2), all variance inflation factors were below a conservative threshold of 2.5, meaning we had no indications of multicollinearity within the data.
+
+\hypertarget{the-role-of-alexithymia-and-autistic-traits-in-predicting-face-processing}{%
+\subsection*{The role of alexithymia and autistic traits in predicting face processing}\label{the-role-of-alexithymia-and-autistic-traits-in-predicting-face-processing}}
+\addcontentsline{toc}{subsection}{The role of alexithymia and autistic traits in predicting face processing}
+
+As per our analysis plan, we conducted a series of hierarchical regressions to test the roles of alexithymia versus autistic traits on face processing abilities. Figure 1 summarises the steps of our regressions. Table 2 includes the correlations between the face processing variables, depression and anxiety scores, autistic traits and alexithymic traits.
+
+In our first series of regressions, a continuous measure of autistic traits, the AQ28, was entered in the final step. Table 3 summarises the results of this regression series. For emotion attribution thresholds, identity attribution thresholds, and identity PSE, no model was significant at any step. For emotion PSE, the regression model was significant at steps 1s and 2 (although the addition of the TAS in step 2 did not lead to a significant increase in the variance explained). The only significant predictor was gender, specifically the dummy variable indicating ``other'' gender. See sub-section ``The role of gender'' for follow up tests on gender effects on emotion PSE. Table 4 summarises the coefficients for the regressions with significant models.
+
+Together, these results suggest that neither autistic nor alexithymic traits explain a significant amount of variance in face processing abilities after demographic variables are accounted for.
+
+\hypertarget{the-role-of-autism-status-and-autism-self-identification-in-predicting-face-processing}{%
+\subsection*{The role of autism status and autism self-identification in predicting face processing}\label{the-role-of-autism-status-and-autism-self-identification-in-predicting-face-processing}}
+\addcontentsline{toc}{subsection}{The role of autism status and autism self-identification in predicting face processing}
+
+Further regression series were conducted, to test a) whether autism status (autistic versus non-autistic) rather than continuous autistic traits contributed to face processing ability after controlling for alexithymia, anxiety and depression and; b) whether self-identification versus clinical diagnosis of autism affected the results.
+
+Table 5 summarises the results of the regression series that considered the role of autistic status. For emotion attribution thresholds, identity attribution thresholds, and identity PSE, no model was significant at any step. For emotion PSE, the regression model was significant at steps 1, 2 and 4, although beyond model 1 no additional steps added significant explained variance. Table 6 summarises the coefficients for the regressions with significant models.
+
+Table 7 summarises the results of the regression series that considered the role of self-identification. Similar to the regression series reported above, emotion attribution thresholds, identity attribution thresholds, and identity PSE, no model was significant at any step. For emotion PSE, the regression model was significant at steps 1, 2 and 4, although beyond model 1 no additional steps added significant explained variance. Table 8 summarises the coefficients for the regressions with significant models.
+
+In addition, we used the AQ28 scores to remove non-autistic individuals who scored above the AQ28 threshold, and autistic individuals who scored below the AQ28 threshold. This resulted in 52 non-autistic participants and 78 autistic participants (interestingly the two participants removed from the autistic group were both clinically diagnosed, not self-identifying). Regression analyses with participants who had AQ28 scores incongruent with their group removed did not yield any significant models at any step, with any dependent variable, or any significant changes in variance explained between steps. See Supplementary Materials for the statistics from these regressions.
+
+\hypertarget{effects-of-high-versus-low-alexithymic-traits}{%
+\subsection*{Effects of high versus low alexithymic traits}\label{effects-of-high-versus-low-alexithymic-traits}}
+\addcontentsline{toc}{subsection}{Effects of high versus low alexithymic traits}
+
+We compared participants who scored above the standard threshold for ``high'' alexithymic traits to those who scored below this threshold on our face processing measures, autistic traits, and anxiety and depression scores. We again removed outliers: this was done using the thresholds used for regression series 1 (see Supplementary Materials for results when all participants including outliers are included). Given that the face processing variables, AQ scores and HADS scores were not normally distributed, these comparisons were conducted using the non-parametric Mann-Whitney U tests. Table 9 includes the statistics for these comparisons.
+
+Comparing participants who scored above and below the high alexithymia cut-offs on the face processing variables, no comparisons reached significance (see Table 9). Highly alexithymic participants had higher autistic traits, and lower anxiety scores. Depression scores were not significantly different between the group.
+
+\hypertarget{findings-with-reduced-tas-8-alexithymia-measure}{%
+\subsection*{Findings with reduced TAS-8 alexithymia measure}\label{findings-with-reduced-tas-8-alexithymia-measure}}
+\addcontentsline{toc}{subsection}{Findings with reduced TAS-8 alexithymia measure}
+
+The regression series were also run with the standard TAS total score replaced with a revised TAS-8 measure. The results were identical to those with the long-form TAS measure. There were no significant models or changes in explained variance for analyses with emotion attribution thresholds, identity attribution thresholds, or identity PSE, for all version of regression (i.e.~when AQ scores, autism group status, and self-identification status were entered in step 4). For emotion PSE scores, the regression using AQ scores was significant at steps 1 and 2, but no significant change in the amount of variance explained was found. The regressions using autism group (autism versus non-autism) and self-identification status (clinical diagnosis vs self-identification vs non-autistic controls) were significant at steps 1, 2 and 4, but there was no significant change in variance explained beyond the variables entered in step 1.
+
+The statistics for the regressions with the TAS-8 measure are reported in the Supplementary Analyses. Note that these analyses were run using the same Cook's Distance threshold rule, calculated for each regression separately.
+
+\hypertarget{unregistered-analyses-the-role-of-gender-identity-in-emotion-perception}{%
+\subsection*{Unregistered analyses: The role of gender identity in emotion perception}\label{unregistered-analyses-the-role-of-gender-identity-in-emotion-perception}}
+\addcontentsline{toc}{subsection}{Unregistered analyses: The role of gender identity in emotion perception}
+
+While neither alexithymia nor autistic traits/status were significant predictors of our face processing variables in our analyses, gender did emerge as a significant predictor of emotion PSE scores in the above analyses. Follow-up comparisons comparing emotion PSE between participants who we male, female or selected ``other'' as their gender showed that the other group had significantly lower emotion PSE scores (N = 16, Mdn = .47) compared to both males (N = 74, Mdn = .49) and females (N = 88, Mdn = .50): Kruskal-Wallis H (2) = 9.52, p = .009.
+
+\hypertarget{discussion}{%
+\section*{Discussion}\label{discussion}}
+\addcontentsline{toc}{section}{Discussion}
+
+\hypertarget{funding-details}{%
+\section*{Funding details}\label{funding-details}}
+\addcontentsline{toc}{section}{Funding details}
+
+This project is being funded by the University of York as part of a PhD scholarship for the author Natasha Baxter.
+
+\hypertarget{disclosure-statement}{%
+\section*{Disclosure Statement}\label{disclosure-statement}}
+\addcontentsline{toc}{section}{Disclosure Statement}
+
+There are no conflicts of interest for either of the authors.
+
+\hypertarget{data-availability-statement}{%
+\section*{Data availability statement}\label{data-availability-statement}}
+\addcontentsline{toc}{section}{Data availability statement}
+
+Data associated with the non-autistic sample is available on the Open Science Framework. This is the link: \url{https://osf.io/rhykm/?view_only=5585f03089764c9f98427b7b012c9bc0}
+
+\hypertarget{references}{%
+\section*{References}\label{references}}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-adolphs2001a}{}}%
+Adolphs R, Sears L, Piven J. 2001. Abnormal processing of social information from faces in autism. \emph{Journal of cognitive neuroscience} \textbf{13}:232--240.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ashwin2006a}{}}%
+Ashwin C, Chapman E, Colle L, Baron-Cohen S. 2006. Impaired recognition of negative basic emotions in autism: A test of the amygdala theory. \emph{Social neuroscience} \textbf{1}:349--363.
+
+\leavevmode\vadjust pre{\hypertarget{ref-bagby1994a}{}}%
+Bagby RM, Parker JD, Taylor GJ. 1994. The twenty-item toronto alexithymia scale---i. Item selection and cross-validation of the factor structure. \emph{Journal of psychosomatic research} \textbf{38}:23--32.
+
+\leavevmode\vadjust pre{\hypertarget{ref-bal2010a}{}}%
+Bal E, Harden E, Lamb D, Hecke AV, Denver JW, Porges SW. 2010. Emotion recognition in children with autism spectrum disorders: Relations to eye gaze and autonomic state. \emph{Journal of autism and developmental disorders} \textbf{40}:358--370.
+
+\leavevmode\vadjust pre{\hypertarget{ref-baron-cohen1997a}{}}%
+Baron-Cohen S, Jolliffe T, Mortimore C, Robertson M. 1997. Another advanced test of theory of mind: Evidence from very high functioning adults with autism or asperger syndrome. \emph{Child Psychology \& Psychiatry \& Allied Disciplines} \textbf{38}:813--822.
+
+\leavevmode\vadjust pre{\hypertarget{ref-baron-cohen2001a}{}}%
+Baron-Cohen S, Wheelwright S, Skinner R, Martin J, Clubley E. 2001. The autism-spectrum quotient (AQ): Evidence from asperger syndrome/high-functioning autism, male sand females, scientists and mathematicians. \emph{Journal of autism and developmental disorders} \textbf{31}:5--17.
+
+\leavevmode\vadjust pre{\hypertarget{ref-berggren2018a}{}}%
+Berggren S, Fletcher-Watson S, Milenkovic N, Marschik PB, Bölte S, Jonsson U. 2018. Emotion recognition training in autism spectrum disorder: A systematic review of challenges related to generalizability. \emph{Developmental neurorehabilitation} \textbf{21}:141--154.
+
+\leavevmode\vadjust pre{\hypertarget{ref-berthoz2005a}{}}%
+Berthoz S, Hill EL. 2005. Reliability of the bermond-vorst alexithymia questionnaire: Data from adults with autism spectrum disorder, their relatives and normal controls. \emph{European Psychiatry} \textbf{20}:291--298.
+
+\leavevmode\vadjust pre{\hypertarget{ref-bjelland2002a}{}}%
+Bjelland I, Dahl AA, Haug TT, Neckelmann D. 2002. The validity of the hospital anxiety and depression scale: An updated literature review. \emph{Journal of psychosomatic research} \textbf{52}:69--77.
+
+\leavevmode\vadjust pre{\hypertarget{ref-calder1996a}{}}%
+Calder AJ, Young AW, Perrett DI, Etcoff NL, Rowland D. 1996. Categorical perception of morphed facial expressions. \emph{Visual Cognition} \textbf{3}:81--118.
+
+\leavevmode\vadjust pre{\hypertarget{ref-cook2013a}{}}%
+Cook R, Brewer R, Shah P, Bird G. 2013. Alexithymia, not autism, predicts poor recognition of emotional facial expressions. \emph{Psychological science} \textbf{24}:723--732.
+
+\leavevmode\vadjust pre{\hypertarget{ref-corden2008a}{}}%
+Corden B, Chilvers R, Skuse D. 2008. Avoidance of emotionally arousing stimuli predicts social--perceptual impairment in asperger's syndrome. \emph{Neuropsychologia} \textbf{46}:137--147.
+
+\leavevmode\vadjust pre{\hypertarget{ref-demenescu2010a}{}}%
+Demenescu LR, Kortekaas R, Boer JA, Aleman A. 2010. Impaired attribution of emotion to facial expressions in anxiety and major depression. \emph{PloS one} \textbf{5}:15058.
+
+\leavevmode\vadjust pre{\hypertarget{ref-faul2009a}{}}%
+Faul F, Erdfelder E, Buchner A, Lang A-G. 2009. Statistical power analyses using g*power 3.1: Tests for correlation and regression analyses. \emph{Behavior Research Methods} \textbf{41}:1149--1160.
+
+\leavevmode\vadjust pre{\hypertarget{ref-gauthier2009a}{}}%
+Gauthier I, Klaiman C, Schultz RT. 2009. Face composite effects reveal abnormal face processing in autism spectrum disorders. \emph{Vision Research} \textbf{49}:470--478.
+
+\leavevmode\vadjust pre{\hypertarget{ref-gould2011a}{}}%
+Gould J, Ashton-Smith J. 2011. Missed diagnosis or misdiagnosis? Girls and women on the autism spectrum.
+
+\leavevmode\vadjust pre{\hypertarget{ref-hoekstra2011a}{}}%
+Hoekstra RA, Vinkhuyzen AA, Wheelwright S, Bartels M, Boomsma DI, Baron-Cohen S, Sluis S. 2011. The construction and validation of an abridged version of the autism-spectrum quotient (AQ-short. \emph{Journal of autism and developmental disorders} \textbf{41}:589--596.
+
+\leavevmode\vadjust pre{\hypertarget{ref-hollocks2019a}{}}%
+Hollocks MJ, Lerh JW, Magiati I, Meiser-Stedman R, Brugha TS. 2019. Anxiety and depression in adults with autism spectrum disorder: A systematic review and meta-analysis. \emph{Psychological medicine} \textbf{49}:559--572.
+
+\leavevmode\vadjust pre{\hypertarget{ref-honkalampi2000a}{}}%
+Honkalampi K, Hintikka J, Tanskanen A, Lehtonen J, Viinamäki H. 2000. Depression is strongly associated with alexithymia in the general population. \emph{Journal of psychosomatic research} \textbf{48}:99--104.
+
+\leavevmode\vadjust pre{\hypertarget{ref-howard2000a}{}}%
+Howard MA, Cowell PE, Boucher J, Broks P, Mayes A, Farrant A, Roberts N. 2000. Convergent neuroanatomical and behavioural evidence of an amygdala hypothesis of autism. \emph{Neuroreport} \textbf{11}:2931--2935.
+
+\leavevmode\vadjust pre{\hypertarget{ref-karukivi2010a}{}}%
+Karukivi M, Hautala L, Kaleva O, Haapasalo-Pesu KM, Liuksila PR, Joukamaa M, Saarijärvi S. 2010. Alexithymia is associated with anxiety among adolescents. \emph{Journal of affective disorders} \textbf{125}:383--387.
+
+\leavevmode\vadjust pre{\hypertarget{ref-kinnaird2019a}{}}%
+Kinnaird E, Stewart C, Tchanturia K. 2019. Investigating alexithymia in autism: A systematic review and meta-analysis. \emph{European Psychiatry} \textbf{55}:80--89.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ko2018a}{}}%
+Ko B. 2018. A brief review of facial emotion recognition based on visual information. \emph{Sensors} \textbf{18}:401.
+
+\leavevmode\vadjust pre{\hypertarget{ref-loth2018a}{}}%
+Loth E, Garrido L, Ahmad J, Watson E, Duff A, Duchaine B. 2018. Facial expression recognition as a candidate marker for autism spectrum disorder: How frequent and severe are deficits? \emph{Molecular autism} \textbf{9}:7.
+
+\leavevmode\vadjust pre{\hypertarget{ref-loveland2008a}{}}%
+Loveland KA, Bachevalier J, Pearson DA, Lane DM. 2008. Fronto-limbic functioning in children and adolescents with and without autism. \emph{Neuropsychologia} \textbf{46}:49--62.
+
+\leavevmode\vadjust pre{\hypertarget{ref-marchesi2000a}{}}%
+Marchesi C, Brusamonti E, Maggini C. 2000. Are alexithymia, depression, and anxiety distinct constructs in affective disorders? \emph{Journal of psychosomatic research} \textbf{49}:43--49.
+
+\leavevmode\vadjust pre{\hypertarget{ref-morie2019a}{}}%
+Morie KP, Jackson S, Potenza MN, Dritschel B. 2019. Mood disorders in high-functioning autism: The importance of alexithymia and emotional regulation. \emph{Journal of autism and developmental disorders} \textbf{49}:2935--2945.
+
+\leavevmode\vadjust pre{\hypertarget{ref-murphy2016a}{}}%
+Murphy CM, Wilson CE, Robertson DM, Ecker C, Daly EM, Hammond N, McAlonan GM. 2016. Autism spectrum disorder in adults: Diagnosis, management, and health services development. Neuropsychiatric disease and treatment.
+
+\leavevmode\vadjust pre{\hypertarget{ref-neumann2006a}{}}%
+Neumann D, Spezio ML, Piven J, Adolphs R. 2006. Looking you in the mouth: Abnormal gaze in autism resulting from impaired top-down modulation of visual attention. \emph{Social cognitive and affective neuroscience} \textbf{1}:194--202.
+
+\leavevmode\vadjust pre{\hypertarget{ref-nomi2015a}{}}%
+Nomi JS, Uddin LQ. 2015. Face processing in autism spectrum disorders: From brain regions to brain networks. \emph{Neuropsychologia} \textbf{71}:201--216.
+
+\leavevmode\vadjust pre{\hypertarget{ref-oakley2020a}{}}%
+Oakley BF, Jones EJ, Crawley D, Charman T, Buitelaar J, Tillmann J, Loth E. 2020. Alexithymia in autism: Cross-sectional and longitudinal associations with social-communication difficulties, anxiety and depression symptoms. \emph{Psychological Medicine} 1--13.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ogai2003a}{}}%
+Ogai M, Matsumoto H, Suzuki K, Ozawa F, Fukuda R, Uchiyama I, Takei N. 2003. fMRI study of recognition of facial expressions in high-functioning autistic patients. \emph{Neuroreport} \textbf{14}:559--563.
+
+\leavevmode\vadjust pre{\hypertarget{ref-onur2013a}{}}%
+Onur E, Alkın T, Sheridan MJ, Wise TN. 2013. Alexithymia and emotional intelligence in patients with panic disorder, generalized anxiety disorder and major depressive disorder. \emph{Psychiatric Quarterly} \textbf{84}:303--311.
+
+\leavevmode\vadjust pre{\hypertarget{ref-prins2018a}{}}%
+Prins N, Kingdom FAA. 2018. Applying the model-comparison approach to test specific research hypotheses in psychophysical research using the palamedes toolbox. \emph{Frontiers in Psychology} \textbf{9}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-rutherford2008a}{}}%
+Rutherford MD, Towns AM. 2008. Scan path differences and similarities during emotion perception in those with and without autism spectrum disorders. \emph{Journal of autism and developmental disorders} \textbf{38}:1371--1381.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ruzich2015a}{}}%
+Ruzich E, Allison C, Smith P, Watson P, Auyeung B, Ring H, Baron-Cohen S. 2015. Measuring autistic traits in the general population: A systematic review of the autism-spectrum quotient (AQ) in a nonclinical population sample of 6,900 typical adult males and females. \emph{Molecular autism} \textbf{6}:1--12.
+
+\leavevmode\vadjust pre{\hypertarget{ref-sato2017a}{}}%
+Sato W, Sawada R, Uono S, Yoshimura S, Kochiyama T, Kubota Y, Toichi M. 2017. Impaired detection of happy facial expressions in autism. \emph{Scientific reports} \textbf{7}:13340.
+
+\leavevmode\vadjust pre{\hypertarget{ref-shah2019a}{}}%
+Shah P, Livingston LA, Callan MJ, Player L. 2019. Trait autism is a better predictor of empathy than alexithymia. \emph{Journal of autism and developmental disorders} \textbf{49}:3956--3964.
+
+\leavevmode\vadjust pre{\hypertarget{ref-sifneos1973a}{}}%
+Sifneos PE. 1973. The prevalence of {``alexithymic''} characteristics in psychosomatic patients. \emph{Psychotherapy and psychosomatics} \textbf{22}:255--262.
+
+\leavevmode\vadjust pre{\hypertarget{ref-silani2008a}{}}%
+Silani G, Bird G, Brindley R, Singer T, Frith C, Frith U. 2008. Levels of emotional awareness and autism: An fMRI study. \emph{Social neuroscience} \textbf{3}:97--112.
+
+\leavevmode\vadjust pre{\hypertarget{ref-skokauskas2010a}{}}%
+Skokauskas N, Gallagher L. 2010. Psychosis, affective disorders and anxiety in autistic spectrum disorder: Prevalence and nosological considerations. \emph{Psychopathology} \textbf{43}:8--16.
+
+\leavevmode\vadjust pre{\hypertarget{ref-stewart2006a}{}}%
+Stewart ME, Barnard L, Pearson J, Hasan R, O'Brien G. 2006. Presentation of depression in autism and asperger syndrome: A review. \emph{Autism} \textbf{10}:103--116.
+
+\leavevmode\vadjust pre{\hypertarget{ref-teunisse2001a}{}}%
+Teunisse JP, Gelder B. 2001. Impaired categorical perception of facial expressions in high-functioning adolescents with autism. \emph{Child Neuropsychology} \textbf{7}:1--14.
+
+\leavevmode\vadjust pre{\hypertarget{ref-torro-alves2016a}{}}%
+Torro-Alves N, Bezerra IADO, Rodrigues MR, Machado-de-Sousa JP, Osório FDL, Crippa JA. 2016. Facial emotion recognition in social anxiety: The influence of dynamic information. \emph{Psychology \& Neuroscience} \textbf{9}:1.
+
+\leavevmode\vadjust pre{\hypertarget{ref-uljarevic2013a}{}}%
+Uljarevic M, Hamilton A. 2013. Recognition of emotions in autism: A formal meta-analysis. \emph{Journal of autism and developmental disorders} \textbf{43}:1517--1526.
+
+\leavevmode\vadjust pre{\hypertarget{ref-venta2013a}{}}%
+Venta A, Hart J, Sharp C. 2013. The relation between experiential avoidance, alexithymia and emotion regulation in inpatient adolescents. \emph{Clinical child psychology and psychiatry} \textbf{18}:398--410.
+
+\leavevmode\vadjust pre{\hypertarget{ref-waldren2022a}{}}%
+Waldren LH, Livingston LA, Clutterbuck RA, Callan MJ, Walton E, Shah P. 2022. Using incorrect cut-off values in autism screening. Tools: The Consequences for Psychological Science.
+
+\leavevmode\vadjust pre{\hypertarget{ref-wallace2008a}{}}%
+Wallace S, Coleman M, Bailey A. 2008. An investigation of basic facial expression recognition in autism spectrum disorders. \emph{Cognition and Emotion} \textbf{22}:1353--1380.
+
+\leavevmode\vadjust pre{\hypertarget{ref-williams2021a}{}}%
+Williams ZJ, Gotham KO. 2021. Improving the measurement of alexithymia in autistic adults: A psychometric investigation of the 20-item toronto alexithymia scale and generation of a general alexithymia factor score using item response theory. \emph{Molecular autism} \textbf{12}:1--24.
+
+\leavevmode\vadjust pre{\hypertarget{ref-zech1999a}{}}%
+Zech E, Luminet O, Rimé B, Wagner H. 1999. Alexithymia and its measurement: Confirmatory factor analyses of the 20‐item toronto alexithymia scale and the bermond--vorst alexithymia questionnaire. \emph{European Journal of Personality} \textbf{13}:511--532.
+
+\leavevmode\vadjust pre{\hypertarget{ref-zigmond1983a}{}}%
+Zigmond AS, Snaith RP. 1983. The hospital anxiety and depression scale. \emph{Acta psychiatrica scandinavica} \textbf{67}:361--370.
+
+\end{CSLReferences}
+
+\end{document}
