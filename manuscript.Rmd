@@ -18,15 +18,127 @@ csl: elife.csl
 
 ```{r setup, include=FALSE}
 
-packagelist <- c('pwr')
+packagelist <- c('pwr','rstatix','kableExtra','MASS','lm.beta')
 missingpackages <- packagelist[!packagelist %in% installed.packages()[,1]]
 if (length(missingpackages)>0){install.packages(missingpackages)}
 toinstall <- packagelist[which(!packagelist %in% (.packages()))]
 invisible(lapply(toinstall,library,character.only=TRUE))
 
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE, include=TRUE)
 
 data <- read.csv('OSF_v3 both groups all data.csv')
+
+TD <- subset(data,Group_NTorASC==0)
+ASC <- subset(data,Group_NTorASC==1)
+
+cookthresh <- 0.022
+
+```
+
+```{r regseries1}
+
+# stepwise regression series 1
+
+# Emotion Attribution DV
+#define model with all predictors
+all <- lm(EMOATTINV ~ AGE + Dum_male + Dum_other + Dum_Asian + Dum_Mixed + Dum_Black + TASTOTAL + HANX7 + HDEP7 + AQ, data=data)
+
+# exclude outliers using cook's distance threshold
+CD <- cooks.distance(all)
+i <- which(CD<cookthresh)
+data_EA <- data[i,]
+
+# intercept only (null) model
+EAmodel0 <- lm(EMOATTINV ~ 1, data=data_EA)
+
+# first stepwise entry
+EAmodel1 <- lm(EMOATTINV ~ AGE + Dum_male + Dum_other + Dum_Asian + Dum_Mixed + Dum_Black, data=data_EA)
+
+# second stepwise entry
+EAmodel2 <- lm(EMOATTINV ~ AGE + Dum_male + Dum_other + Dum_Asian + Dum_Mixed + Dum_Black + TASTOTAL, data=data_EA)
+
+# third stepwise entry
+EAmodel3 <- lm(EMOATTINV ~ AGE + Dum_male + Dum_other + Dum_Asian + Dum_Mixed + Dum_Black + TASTOTAL + HANX7 + HDEP7, data=data_EA)
+
+# fourth stepwise entry
+EAmodel4 <- lm(EMOATTINV ~ AGE + Dum_male + Dum_other + Dum_Asian + Dum_Mixed + Dum_Black + TASTOTAL + HANX7 + HDEP7 + AQ, data=data_EA)
+
+
+# Identity Attribution DV
+#define model with all predictors
+all <- lm(IDATTINV ~ AGE + Dum_male + Dum_other + Dum_Asian + Dum_Mixed + Dum_Black + TASTOTAL + HANX7 + HDEP7 + AQ, data=data)
+
+# exclude outliers using cook's distance threshold
+CD <- cooks.distance(all)
+i <- which(CD<cookthresh)
+data_IA <- data[i,]
+
+# intercept only (null) model
+IAmodel0 <- lm(IDATTINV ~ 1, data=data_IA)
+
+# first stepwise entry
+IAmodel1 <- lm(IDATTINV ~ AGE + Dum_male + Dum_other + Dum_Asian + Dum_Mixed + Dum_Black, data=data_IA)
+
+# second stepwise entry
+IAmodel2 <- lm(IDATTINV ~ AGE + Dum_male + Dum_other + Dum_Asian + Dum_Mixed + Dum_Black + TASTOTAL, data=data_IA)
+
+# third stepwise entry
+IAmodel3 <- lm(IDATTINV ~ AGE + Dum_male + Dum_other + Dum_Asian + Dum_Mixed + Dum_Black + TASTOTAL + HANX7 + HDEP7, data=data_IA)
+
+# fourth stepwise entry
+IAmodel4 <- lm(IDATTINV ~ AGE + Dum_male + Dum_other + Dum_Asian + Dum_Mixed + Dum_Black + TASTOTAL + HANX7 + HDEP7 + AQ, data=data_IA)
+
+
+
+# Emotion PSE DV
+#define model with all predictors
+all <- lm(EMOPSE ~ AGE + Dum_male + Dum_other + Dum_Asian + Dum_Mixed + Dum_Black + TASTOTAL + HANX7 + HDEP7 + AQ, data=data)
+
+# exclude outliers using cook's distance threshold
+CD <- cooks.distance(all)
+i <- which(CD<cookthresh)
+data_EP <- data[i,]
+
+# intercept only (null) model
+EPmodel0 <- lm(EMOPSE ~ 1, data=data_EP)
+
+# first stepwise entry
+EPmodel1 <- lm(EMOPSE ~ AGE + Dum_male + Dum_other + Dum_Asian + Dum_Mixed + Dum_Black, data=data_EP)
+
+# second stepwise entry
+EPmodel2 <- lm(EMOPSE ~ AGE + Dum_male + Dum_other + Dum_Asian + Dum_Mixed + Dum_Black + TASTOTAL, data=data_EP)
+
+# third stepwise entry
+EPmodel3 <- lm(EMOPSE ~ AGE + Dum_male + Dum_other + Dum_Asian + Dum_Mixed + Dum_Black + TASTOTAL + HANX7 + HDEP7, data=data_EP)
+
+# fourth stepwise entry
+EPmodel4 <- lm(EMOPSE ~ AGE + Dum_male + Dum_other + Dum_Asian + Dum_Mixed + Dum_Black + TASTOTAL + HANX7 + HDEP7 + AQ, data=data_EP)
+
+
+
+# Identity PSE DV
+#define model with all predictors
+all <- lm(IDPSE ~ AGE + Dum_male + Dum_other + Dum_Asian + Dum_Mixed + Dum_Black + TASTOTAL + HANX7 + HDEP7 + AQ, data=data)
+
+# exclude outliers using cook's distance threshold
+CD <- cooks.distance(all)
+i <- which(CD<cookthresh)
+data_IP <- data[i,]
+
+# intercept only (null) model
+IPmodel0 <- lm(IDPSE ~ 1, data=data_IP)
+
+# first stepwise entry
+IPmodel1 <- lm(IDPSE ~ AGE + Dum_male + Dum_other + Dum_Asian + Dum_Mixed + Dum_Black, data=data_IP)
+
+# second stepwise entry
+IPmodel2 <- lm(IDPSE ~ AGE + Dum_male + Dum_other + Dum_Asian + Dum_Mixed + Dum_Black + TASTOTAL, data=data_IP)
+
+# third stepwise entry
+IPmodel3 <- lm(IDPSE ~ AGE + Dum_male + Dum_other + Dum_Asian + Dum_Mixed + Dum_Black + TASTOTAL + HANX7 + HDEP7, data=data_IP)
+
+# fourth stepwise entry
+IPmodel4 <- lm(IDPSE ~ AGE + Dum_male + Dum_other + Dum_Asian + Dum_Mixed + Dum_Black + TASTOTAL + HANX7 + HDEP7 + AQ, data=data_IP)
 
 ```
 
@@ -85,13 +197,41 @@ Our project includes data from both non-autistic and autistic individuals. In or
 
 ## Participants {.unnumbered}
 
-The non-autistic group was recruited via social media, ‘word of mouth’, and via Prolific. We aimed to collect 100 non-autistic participants, and had 119 complete datasets. However, 21 were removed due to being incomplete, or failing an attention check measure. This means that data from a sample of 98 non-autistic adults was been collected in a previous study using the same methods, materials and experimental design. This sample serves as a comparison group to the autistic sample. For the preliminary results drawn from the non-autistic group only (and which featured in the Stage 1 version of this report) see “Results from the non-autistic sample – Preregistered analyses” in the Supplementary Materials.
+The non-autistic group was recruited via social media, ‘word of mouth’, and via Prolific. We aimed to collect 100 non-autistic participants, and had 119 complete datasets. However, 21 were removed due to being incomplete, or failing an attention check measure. This means that data from a sample of `r nrow(TD)` non-autistic adults was been collected in a previous study using the same methods, materials and experimental design. This sample serves as a comparison group to the autistic sample. For the preliminary results drawn from the non-autistic group only (and which featured in the Stage 1 version of this report) see “Results from the non-autistic sample – Preregistered analyses” in the Supplementary Materials.
 
-To be comparable to the data collected from this control group, we aimed to collect complete datasets from at least 100 autistic people (see our Power analysis section for considerations on potential data loss). During data collection, it was discovered that a number of recruited individuals were suspected to be fraudulent participants: this was due to an autism organization sharing the online link to take part in the study directly without having to contact the research team. Data gathered during this period of recruitment is not included in the study as a high number of participants’ emails and addresses (collected for reimbursement purposes) were deemed to be suspicious. This unfortunately had a knock on effect on our ability to meet out intended recruitment target, due to resource constraints. In the end, we successfully collected 80 autistic data sets. Even when outliers were removed, we achieved our minimum power requirements for 73 autistic datasets for each regression conducted.
+To be comparable to the data collected from this control group, we aimed to collect complete datasets from at least 100 autistic people (see our Power analysis section for considerations on potential data loss). During data collection, it was discovered that a number of recruited individuals were suspected to be fraudulent participants: this was due to an autism organization sharing the online link to take part in the study directly without having to contact the research team. Data gathered during this period of recruitment is not included in the study as a high number of participants’ emails and addresses (collected for reimbursement purposes) were deemed to be suspicious. This unfortunately had a knock on effect on our ability to meet out intended recruitment target, due to resource constraints. In the end, we successfully collected `r nrow(ASC)` autistic data sets. Even when outliers were removed, we achieved our minimum power requirements for 73 autistic datasets for each regression conducted.
 
 Similar methods were used to recruit our autistic sample, with the exception of Prolific, plus via the Autistica research network. Participants needed to be aged 18 years and over. Both participants with clinically diagnosed ASC or those who self-identify as autistic were welcomed into the study: we recognise that for certain individuals a formal diagnosis can be hard to obtain, especially in adults and females, as females tend to present differently to males, and ASC may be ‘missed’ in adults who were not identified as children [@gould2011a; @murphy2016a]. Therefore, we invited invite both individuals who self-identify as autistic, and those who have received a formal diagnosis to participate. Participants were asked whether they have received a formal diagnosis or self-identify as autistic, to establish whether self-identification is associated with our variables of interest. 
 
-Table 1 summarises the participants’ characteristics. 
+Table \@ref(tab:table1) summarises the participants’ characteristics. 
+
+``` {r table1}
+
+table1data <- data.frame(matrix(0,nrow=20,ncol=4))
+
+table1data[1,] <- c('','Full Sample','Autistic Sample','Non-autistic Sample')
+table1data[2,] <- c('',paste0('(N = ',nrow(data),')'),paste0('(N = ',nrow(ASC),')'),paste0('(N = ',nrow(TD),')'))
+table1data[3,] <- c('Gender',paste0('N Female = ',sum(data$GENDER=='Fema')),paste0('N Female = ',sum(ASC$GENDER=='Fema')),paste0('N Female = ',sum(TD$GENDER=='Fema')))
+table1data[4,] <- c('',paste0('N Male = ',sum(data$GENDER=='Male')),paste0('N Male = ',sum(ASC$GENDER=='Male')),paste0('N Male = ',sum(TD$GENDER=='Male')))
+table1data[5,] <- c('',paste0('N Other = ',sum(data$GENDER=='Othe')),paste0('N Other = ',sum(ASC$GENDER=='Othe')),paste0('N Other = ',sum(TD$GENDER=='Othe')))
+table1data[7,] <- c('Age',paste0(round(mean(data$AGE),digits=2),' (',round(sd(data$AGE),digits=2),')'),paste0(round(mean(ASC$AGE),digits=2),' (',round(sd(ASC$AGE),digits=2),')'),paste0(round(mean(TD$AGE),digits=2),' (',round(sd(TD$AGE),digits=2),')'))
+table1data[9,] <- c('Ethnicity',paste0('N Asian = ',sum(data$ETHNCITY=='Asian')),paste0('N Asian = ',sum(ASC$ETHNCITY=='Asian')),paste0('N Asian = ',sum(TD$ETHNCITY=='Asian')))
+table1data[10,] <- c('',paste0('N Black = ',sum(data$ETHNCITY=='Black')),paste0('N Black = ',sum(ASC$ETHNCITY=='Black')),paste0('N Mixed = ',sum(TD$ETHNCITY=='mixed')))
+table1data[11,] <- c('',paste0('N Mixed = ',sum(data$ETHNCITY=='mixed')),paste0('N Mixed = ',sum(ASC$ETHNCITY=='mixed')),paste0('N White = ',sum(TD$ETHNCITY=='White')))
+table1data[12,] <- c('',paste0('N White = ',sum(data$ETHNCITY=='White')),paste0('N White = ',sum(ASC$ETHNCITY=='White')),'')
+table1data[14,] <- c('HADS-Depression',paste0(round(mean(data$HDEP7),digits=2),' (',round(sd(data$HDEP7),digits=2),')'),paste0(round(mean(ASC$HDEP7),digits=2),' (',round(sd(ASC$HDEP7),digits=2),')'),paste0(round(mean(TD$HDEP7),digits=2),' (',round(sd(TD$HDEP7),digits=2),')'))
+table1data[16,] <- c('HADS-Anxiety',paste0(round(mean(data$HANX7),digits=2),' (',round(sd(data$HANX7),digits=2),')'),paste0(round(mean(ASC$HANX7),digits=2),' (',round(sd(ASC$HANX7),digits=2),')'),paste0(round(mean(TD$HANX7),digits=2),' (',round(sd(TD$HANX7),digits=2),')'))
+table1data[18,] <- c('AQ-28',paste0(round(mean(data$AQ),digits=2),' (',round(sd(data$AQ),digits=2),')'),paste0(round(mean(ASC$AQ),digits=2),' (',round(sd(ASC$AQ),digits=2),')'),paste0(round(mean(TD$AQ),digits=2),' (',round(sd(TD$AQ),digits=2),')'))
+table1data[20,] <- c('TAS-20',paste0(round(mean(data$TASTOTAL),digits=2),' (',round(sd(data$TASTOTAL),digits=2),')'),paste0(round(mean(ASC$TASTOTAL),digits=2),' (',round(sd(ASC$TASTOTAL),digits=2),')'),paste0(round(mean(TD$TASTOTAL),digits=2),' (',round(sd(TD$TASTOTAL),digits=2),')'))
+table1data[c(6,8,13,15,17,19),] <- ''
+
+knitr::kable(table1data, booktabs = T, col.names = NULL, caption='Participant Characteristics.', align='llll') %>%
+  row_spec(2, hline_after=T) %>%
+  kable_styling(latex_options='HOLD_position') %>%
+  add_footnote('For non-category data, statistics reported are means with standard deviations in parentheses.',notation='none')
+
+```
+
 
 ## Tasks and materials {.unnumbered} 
 
@@ -113,7 +253,7 @@ Given that this study was conducted online away from experimenter supervision, w
 
 Self-report measures were used for capturing autistic traits, alexithymia traits and anxiety and depression symptoms.
 
-The Hospital Anxiety and Depression scale [HADS, @zigmond1983a] consists of seven questions for anxiety and seven questions for depression. Depression and anxiety scales are scored separately. The HADS has been shown to perform well in measuring anxiety and depression symptoms in non-clinical samples as well as clinical samples [@bjelland2002a], including the identification of anxiety and depression in autistic individuals, with good internal consistency and convergent validity for both the anxiety and depression scales [@uljarevic2013a]. The means, standard deviations and distribution of the HADS data for our data from typically developed adults confirm the measure is normally distributed, with suitable variation in scores that will allow for the exploration of the impacts of anxiety and depression on our variables of interest. For  HADS anxiety, M = 10.87 (SD = 2.90). For HADS depression, M = 8.69 (SD = 1.94).  
+The Hospital Anxiety and Depression scale [HADS, @zigmond1983a] consists of seven questions for anxiety and seven questions for depression. Depression and anxiety scales are scored separately. The HADS has been shown to perform well in measuring anxiety and depression symptoms in non-clinical samples as well as clinical samples [@bjelland2002a], including the identification of anxiety and depression in autistic individuals, with good internal consistency and convergent validity for both the anxiety and depression scales [@uljarevic2013a]. The means, standard deviations and distribution of the HADS data for our data from typically developed adults confirm the measure is normally distributed, with suitable variation in scores that will allow for the exploration of the impacts of anxiety and depression on our variables of interest. For HADS anxiety, M = `r round(mean(TD$HANX7),digits=2)` (SD = `r round(sd(TD$HANX7),digits=2)`). For HADS depression, M = `r round(mean(TD$HDEP7),digits=2)` (SD = `r round(sd(TD$HDEP7),digits=2)`).  
 
 The Toronto Alexithymia Scale [TAS-20, @bagby1994a] consists of three subscales: difficulty describing feelings (reflected in 5 items), difficulty identifying feeling (7 items), and externally-oriented thinking (8 items). Research has shown that the TAS-20 has construct validity and provided evidence of the TAS-20 as a reliable measure of alexithymia [@bagby1994a]. Research also indicates it is suitable for use with individuals with ASC, showing string test re-test reliability and convergent validity with other measures such as the Bermond-Vorst Alexithymia Questionnaire [@berthoz2005a; @zech1999a]. The TAS-20 has also been previously used in autism and emotion recognition research [e.g. @cook2013a].
 
@@ -159,19 +299,320 @@ A previous meta-analysis by @uljarevic2013a examined emotion recognition in ASC 
 
 A priori analyses were carried out to establish the required sample size for a regression analysis, which will be our core hypothesis-testing statistical procedure. The power analysis was carried out using the software G*Power [@faul2009a], with 1 number of tested predictors and 6 total predictors, and an effect size ($f^2$) was 0.15. This power analyses thus tests the power for a predictor to reveal a significant independent contribution to a model, over and above previous entered predictors. Results showed that a sample size of 73 participants would be needed for a significance level of 0.05 and the level of power at 0.90. Also, power analyses states that a sample size of `r ceiling(powerR$n)` would be required to establish a correlation between emotion recognition and the TAS-20 (the alexithymia measure). 
 
-Our first sample of non-autistic participants was a sample of 98 participant, (7 of which were considered outliers in our preliminary analyses). We intended to collect at least 100 complete datasets from our autistic sample, and at least 90 datasets that survive removal due to attention check fails, being an outlier, or poor function fit. As noted in our Participants section above, were were unable to achieve this, but our final sample was 178 participants, after removing incomplete datasets and individuals who failed the attention check. This sample size should still negate any issues with multi-collinearity, and inflation of previous estimate due to publication bias. As previously noted, we included those who self-identify as autistic in our autistic sample in order to aid in recruiting our goal of at least 100 participants. Also, we did not formally checking participants for their clinical diagnosis: as we cannot verify who has a formal diagnosis of autism, we felt it practical to allow people who self-identify as autistic to take part and just ask them if they are or are not formally diagnosed.
+Our first sample of non-autistic participants was a sample of `r nrow(TD)` participants, (7 of which were considered outliers in our preliminary analyses). We intended to collect at least 100 complete datasets from our autistic sample, and at least 90 datasets that survive removal due to attention check fails, being an outlier, or poor function fit. As noted in our Participants section above, were were unable to achieve this, but our final sample was `r nrow(data)` participants, after removing incomplete datasets and individuals who failed the attention check. This sample size should still negate any issues with multi-collinearity, and inflation of previous estimate due to publication bias. As previously noted, we included those who self-identify as autistic in our autistic sample in order to aid in recruiting our goal of at least 100 participants. Also, we did not formally checking participants for their clinical diagnosis: as we cannot verify who has a formal diagnosis of autism, we felt it practical to allow people who self-identify as autistic to take part and just ask them if they are or are not formally diagnosed.
 
 # Results {.unnumbered}
 
 As per our pre-registered analysis plan, we conducted all analyses with outliers excluded and included. In the below sections are the results when outliers were excluded (using a Cook’s Distance threshold of 0.022, a threshold applied for each regression independently, as Cook’s Distances are calculated for each regression separately). Please see the Supplementary Materials for Results with outliers included, but in summary when all participants were included no regression model was significant, at any step or for any dependent variable. While some predictors were correlated with each other (see Table 2), all variance inflation factors were below a conservative threshold of 2.5, meaning we had no indications of multicollinearity within the data.
 
+``` {r table2, warning=FALSE}
+
+table2data <- data.frame(matrix(0,nrow=14,ncol=9))
+
+table2data[,1] <- c('','','','TAS-TOTAL','','','AQ','','','HADS Depression','','','HADS Anxiety','')
+table2data[c(6,9,12),] <- ''
+table2data[1,] <- c('','','','', '','', '', 'Emotion', 'Identity')
+table2data[2,] <- c('','TAS-','AQ','HADS', 'HADS','Emotion PSE', 'Identity PSE', 'attribution', 'attribution')
+table2data[3,] <- c('','TOTAL','','Depression','Anxiety',paste0('(N=',nrow(data_EP),')'),paste0('(N=',nrow(data_IP),')'),paste0('(N=',nrow(data_EA),')'),paste0('(N=',nrow(data_IA),')'))
+table2data[4:5,2] <- ''
+table2data[7:8,3] <- ''
+table2data[10:11,4] <- ''
+table2data[13:14,5] <- ''
+
+cout <- cor.test(data$TASTOTAL,data$AQ,method='spearman',alternative='greater')
+table2data[7,2] <- p_format(cout$estimate,digits=3,leading.zero=F)
+table2data[8,2] <- p_format(cout$p.value,digits=3,accuracy=0.001,leading.zero=F,add.p=T)
+table2data[4,3] <- p_format(cout$estimate,digits=3,leading.zero=F)
+table2data[5,3] <- p_format(cout$p.value,digits=3,accuracy=0.001,leading.zero=F,add.p=T)
+
+cout <- cor.test(data$TASTOTAL,data$HDEP7,method='spearman',alternative='greater')
+table2data[10,2] <- p_format(cout$estimate,digits=2,leading.zero=F)
+table2data[11,2] <- p_format(cout$p.value,digits=3,accuracy=0.001,leading.zero=F,add.p=T)
+table2data[4,4] <- p_format(cout$estimate,digits=2,leading.zero=F)
+table2data[5,4] <- p_format(cout$p.value,digits=3,accuracy=0.001,leading.zero=F,add.p=T)
+
+cout <- cor.test(data$TASTOTAL,data$HANX7,method='spearman',alternative='less')
+table2data[13,2] <- round(cout$estimate,digits=3)
+table2data[14,2] <- p_format(cout$p.value,digits=3,accuracy=0.001,leading.zero=F,add.p=T)
+table2data[4,5] <- round(cout$estimate,digits=3)
+table2data[5,5] <- p_format(cout$p.value,digits=3,accuracy=0.001,leading.zero=F,add.p=T)
+
+cout <- cor.test(data$AQ,data$HDEP7,method='spearman',alternative='greater')
+table2data[10,3] <- p_format(cout$estimate,digits=3,leading.zero=F)
+table2data[11,3] <- p_format(cout$p.value,digits=2,accuracy=0.001,leading.zero=F,add.p=T)
+table2data[7,4] <- p_format(cout$estimate,digits=3,leading.zero=F)
+table2data[8,4] <- p_format(cout$p.value,digits=2,accuracy=0.001,leading.zero=F,add.p=T)
+
+cout <- cor.test(data$AQ,data$HANX7,method='spearman',alternative='less')
+table2data[13,3] <- round(cout$estimate,digits=3)
+table2data[14,3] <- p_format(cout$p.value,digits=3,accuracy=0.001,leading.zero=F,add.p=T)
+table2data[7,5] <- round(cout$estimate,digits=3)
+table2data[8,5] <- p_format(cout$p.value,digits=3,accuracy=0.001,leading.zero=F,add.p=T)
+
+cout <- cor.test(data$HDEP7,data$HANX7,method='spearman',alternative='less')
+table2data[13,4] <- round(cout$estimate,digits=3)
+table2data[14,4] <- p_format(cout$p.value,digits=3,accuracy=0.001,leading.zero=F,add.p=T)
+table2data[10,5] <- round(cout$estimate,digits=3)
+table2data[11,5] <- p_format(cout$p.value,digits=3,accuracy=0.001,leading.zero=F,add.p=T)
+
+cout <- cor.test(data_EP$EMOPSE,data_EP$TASTOTAL,method='spearman',alternative='greater')
+table2data[4,6] <- round(cout$estimate,digits=3)
+table2data[5,6] <- p_format(cout$p.value,digits=3,accuracy=0.001,leading.zero=F,add.p=T)
+
+cout <- cor.test(data_EP$EMOPSE,data_EP$AQ,method='spearman',alternative='greater')
+table2data[7,6] <- round(cout$estimate,digits=3)
+table2data[8,6] <- p_format(cout$p.value,digits=3,accuracy=0.001,leading.zero=F,add.p=T)
+
+cout <- cor.test(data_EP$EMOPSE,data_EP$HDEP7,method='spearman',alternative='greater')
+table2data[10,6] <- round(cout$estimate,digits=3)
+table2data[11,6] <- p_format(cout$p.value,digits=2,accuracy=0.001,leading.zero=F,add.p=T)
+
+cout <- cor.test(data_EP$EMOPSE,data_EP$HANX7,method='spearman',alternative='greater')
+table2data[13,6] <- round(cout$estimate,digits=3)
+table2data[14,6] <- p_format(cout$p.value,digits=3,accuracy=0.001,leading.zero=F,add.p=T)
+
+
+cout <- cor.test(data_IP$IDPSE,data_IP$TASTOTAL,method='spearman',alternative='greater')
+table2data[4,7] <- round(cout$estimate,digits=3)
+table2data[5,7] <- p_format(cout$p.value,digits=2,accuracy=0.001,leading.zero=F,add.p=T)
+
+cout <- cor.test(data_IP$IDPSE,data_IP$AQ,method='spearman',alternative='greater')
+table2data[7,7] <- round(cout$estimate,digits=3)
+table2data[8,7] <- p_format(cout$p.value,digits=3,accuracy=0.001,leading.zero=F,add.p=T)
+
+cout <- cor.test(data_IP$IDPSE,data_IP$HDEP7,method='spearman',alternative='greater')
+table2data[10,7] <- round(cout$estimate,digits=3)
+table2data[11,7] <- p_format(cout$p.value,digits=3,accuracy=0.001,leading.zero=F,add.p=T)
+
+cout <- cor.test(data_IP$IDPSE,data_IP$HANX7,method='spearman',alternative='greater')
+table2data[13,7] <- round(cout$estimate,digits=3)
+table2data[14,7] <- p_format(cout$p.value,digits=3,accuracy=0.001,leading.zero=F,add.p=T)
+
+
+
+cout <- cor.test(data_EA$EMOATTINV,data_EA$TASTOTAL,method='spearman',alternative='greater')
+table2data[4,8] <- round(cout$estimate,digits=3)
+table2data[5,8] <- p_format(cout$p.value,digits=3,accuracy=0.001,leading.zero=F,add.p=T)
+
+cout <- cor.test(data_EA$EMOATTINV,data_EA$AQ,method='spearman',alternative='greater')
+table2data[7,8] <- round(cout$estimate,digits=3)
+table2data[8,8] <- p_format(cout$p.value,digits=2,accuracy=0.001,leading.zero=F,add.p=T)
+
+cout <- cor.test(data_EA$EMOATTINV,data_EA$HDEP7,method='spearman',alternative='less')
+table2data[10,8] <- round(cout$estimate,digits=3)
+table2data[11,8] <- p_format(cout$p.value,digits=3,accuracy=0.001,leading.zero=F,add.p=T)
+
+cout <- cor.test(data_EA$EMOATTINV,data_EA$HANX7,method='spearman',alternative='less')
+table2data[13,8] <- round(cout$estimate,digits=3)
+table2data[14,8] <- p_format(cout$p.value,digits=3,accuracy=0.001,leading.zero=F,add.p=T)
+
+
+cout <- cor.test(data_IA$IDATTINV,data_IA$TASTOTAL,method='spearman',alternative='greater')
+table2data[4,9] <- round(cout$estimate,digits=3)
+table2data[5,9] <- p_format(cout$p.value,digits=3,accuracy=0.001,leading.zero=F,add.p=T)
+
+cout <- cor.test(data_IA$IDATTINV,data_IA$AQ,method='spearman',alternative='greater')
+table2data[7,9] <- round(cout$estimate,digits=3)
+table2data[8,9] <- p_format(cout$p.value,digits=2,accuracy=0.001,leading.zero=F,add.p=T)
+
+cout <- cor.test(data_IA$IDATTINV,data_IA$HDEP7,method='spearman',alternative='less')
+table2data[10,9] <- round(cout$estimate,digits=3)
+table2data[11,9] <- p_format(cout$p.value,digits=2,accuracy=0.001,leading.zero=F,add.p=T)
+
+cout <- cor.test(data_IA$IDATTINV,data_IA$HANX7,method='spearman',alternative='less')
+table2data[13,9] <- round(cout$estimate,digits=3)
+table2data[14,9] <- p_format(cout$p.value,digits=3,accuracy=0.001,leading.zero=F,add.p=T)
+
+
+knitr::kable(table2data, booktabs = T, col.names = NULL, caption='Correlations between alexithymia traits, autistic traits, depression and anxiety symptoms and face processing variables.', align='lllllllll') %>%
+  row_spec(3, hline_after=T) %>%
+  kable_styling(latex_options='HOLD_position',font_size=8) %>%
+  add_footnote('All correlations are Spearman’s Rank and one-tailed. Note that correlations with the face processing variables are with outliers removed, as per Cook’s Distance threshold rules, generated for regression series 1 (AQ in final step).', notation='none')
+
+```
+
 ## The role of alexithymia and autistic traits in predicting face processing {.unnumbered}
 
 As per our analysis plan, we conducted a series of hierarchical regressions to test the roles of alexithymia versus autistic traits on face processing abilities. Figure 1 summarises the steps of our regressions. Table 2 includes the correlations between the face processing variables, depression and anxiety scores, autistic traits and alexithymic traits. 
 
-In our first series of regressions, a continuous measure of autistic traits, the AQ28, was entered in the final step. Table 3 summarises the results of this regression series. For emotion attribution thresholds, identity attribution thresholds, and identity PSE, no model was significant at any step. For emotion PSE, the regression model was significant at steps 1s and 2 (although the addition of the TAS in step 2 did not lead to a significant increase in the variance explained). The only significant predictor was gender, specifically the dummy variable indicating “other” gender. See sub-section “The role of gender” for follow up tests on gender effects on emotion PSE. Table 4 summarises the coefficients for the regressions with significant models. 
+In our first series of regressions, a continuous measure of autistic traits, the AQ28, was entered in the final step. Table \@ref(tab:table3) summarises the results of this regression series. For emotion attribution thresholds, identity attribution thresholds, and identity PSE, no model was significant at any step. For emotion PSE, the regression model was significant at steps 1s and 2 (although the addition of the TAS in step 2 did not lead to a significant increase in the variance explained). The only significant predictor was gender, specifically the dummy variable indicating “other” gender. See sub-section “The role of gender” for follow up tests on gender effects on emotion PSE. Table 4 summarises the coefficients for the regressions with significant models. 
+
+``` {r table3}
+
+table3data <- data.frame(matrix(0,nrow=6,ncol=9))
+
+table3data[1,] <- c('','','F change,','','F change,','','F change,','','F change,')
+table3data[2,] <- c('','F (Df), p-value','p-value','F (Df), p-value','p-value','F (Df), p-value','p-value','F (Df), p-value','p-value')
+table3data[,1] <- c('','','Model 1','Model 2','Model 3','Model 4')
+
+a <- summary(EAmodel1)
+pval <- p_format(pf(a$fstatistic[1],a$fstatistic[2],a$fstatistic[3],lower.tail=FALSE), digits=3, accuracy = 0.001, leading.zero=FALSE)
+table3data[3,2] <- paste0(round(a$fstatistic[1],digits=2), ' (',a$fstatistic[2],',',a$fstatistic[3],'), ',pval)
+
+a <- summary(EAmodel2)
+pval <- p_format(pf(a$fstatistic[1],a$fstatistic[2],a$fstatistic[3],lower.tail=FALSE), digits=3, accuracy = 0.001, leading.zero=FALSE)
+table3data[4,2] <- paste0(round(a$fstatistic[1],digits=2), ' (',a$fstatistic[2],',',a$fstatistic[3],'), ',pval)
+
+a <- summary(EAmodel3)
+pval <- p_format(pf(a$fstatistic[1],a$fstatistic[2],a$fstatistic[3],lower.tail=FALSE), digits=3, accuracy = 0.001, leading.zero=FALSE)
+table3data[5,2] <- paste0(round(a$fstatistic[1],digits=2), ' (',a$fstatistic[2],',',a$fstatistic[3],'), ',pval)
+
+a <- summary(EAmodel4)
+pval <- p_format(pf(a$fstatistic[1],a$fstatistic[2],a$fstatistic[3],lower.tail=FALSE), digits=3, accuracy = 0.001, leading.zero=FALSE)
+table3data[6,2] <- paste0(round(a$fstatistic[1],digits=2), ' (',a$fstatistic[2],',',a$fstatistic[3],'), ',pval)
+
+a <- summary(IAmodel1)
+pval <- p_format(pf(a$fstatistic[1],a$fstatistic[2],a$fstatistic[3],lower.tail=FALSE), digits=3, accuracy = 0.001, leading.zero=FALSE)
+table3data[3,4] <- paste0(round(a$fstatistic[1],digits=2), ' (',a$fstatistic[2],',',a$fstatistic[3],'), ',pval)
+
+a <- summary(IAmodel2)
+pval <- p_format(pf(a$fstatistic[1],a$fstatistic[2],a$fstatistic[3],lower.tail=FALSE), digits=3, accuracy = 0.001, leading.zero=FALSE)
+table3data[4,4] <- paste0(round(a$fstatistic[1],digits=2), ' (',a$fstatistic[2],',',a$fstatistic[3],'), ',pval)
+
+a <- summary(IAmodel3)
+pval <- p_format(pf(a$fstatistic[1],a$fstatistic[2],a$fstatistic[3],lower.tail=FALSE), digits=3, accuracy = 0.001, leading.zero=FALSE)
+table3data[5,4] <- paste0(round(a$fstatistic[1],digits=2), ' (',a$fstatistic[2],',',a$fstatistic[3],'), ',pval)
+
+a <- summary(IAmodel4)
+pval <- p_format(pf(a$fstatistic[1],a$fstatistic[2],a$fstatistic[3],lower.tail=FALSE), digits=3, accuracy = 0.001, leading.zero=FALSE)
+table3data[6,4] <- paste0(round(a$fstatistic[1],digits=2), ' (',a$fstatistic[2],',',a$fstatistic[3],'), ',pval)
+
+
+a <- summary(EPmodel1)
+pval <- p_format(pf(a$fstatistic[1],a$fstatistic[2],a$fstatistic[3],lower.tail=FALSE), digits=2, accuracy = 0.001, leading.zero=FALSE)
+table3data[3,6] <- paste0(round(a$fstatistic[1],digits=2), ' (',a$fstatistic[2],',',a$fstatistic[3],'), ',pval)
+
+a <- summary(EPmodel2)
+pval <- p_format(pf(a$fstatistic[1],a$fstatistic[2],a$fstatistic[3],lower.tail=FALSE), digits=2, accuracy = 0.001, leading.zero=FALSE)
+table3data[4,6] <- paste0(round(a$fstatistic[1],digits=2), ' (',a$fstatistic[2],',',a$fstatistic[3],'), ',pval)
+
+a <- summary(EPmodel3)
+pval <- p_format(pf(a$fstatistic[1],a$fstatistic[2],a$fstatistic[3],lower.tail=FALSE), digits=2, accuracy = 0.001, leading.zero=FALSE)
+table3data[5,6] <- paste0(round(a$fstatistic[1],digits=2), ' (',a$fstatistic[2],',',a$fstatistic[3],'), ',pval)
+
+a <- summary(EPmodel4)
+pval <- p_format(pf(a$fstatistic[1],a$fstatistic[2],a$fstatistic[3],lower.tail=FALSE), digits=2, accuracy = 0.001, leading.zero=FALSE)
+table3data[6,6] <- paste0(round(a$fstatistic[1],digits=2), ' (',a$fstatistic[2],',',a$fstatistic[3],'), ',pval)
+
+
+a <- summary(IPmodel1)
+pval <- p_format(pf(a$fstatistic[1],a$fstatistic[2],a$fstatistic[3],lower.tail=FALSE), digits=3, accuracy = 0.001, leading.zero=FALSE)
+table3data[3,8] <- paste0(round(a$fstatistic[1],digits=2), ' (',a$fstatistic[2],',',a$fstatistic[3],'), ',pval)
+
+a <- summary(IPmodel2)
+pval <- p_format(pf(a$fstatistic[1],a$fstatistic[2],a$fstatistic[3],lower.tail=FALSE), digits=3, accuracy = 0.001, leading.zero=FALSE)
+table3data[4,8] <- paste0(round(a$fstatistic[1],digits=2), ' (',a$fstatistic[2],',',a$fstatistic[3],'), ',pval)
+
+a <- summary(IPmodel3)
+pval <- p_format(pf(a$fstatistic[1],a$fstatistic[2],a$fstatistic[3],lower.tail=FALSE), digits=3, accuracy = 0.001, leading.zero=FALSE)
+table3data[5,8] <- paste0(round(a$fstatistic[1],digits=2), ' (',a$fstatistic[2],',',a$fstatistic[3],'), ',pval)
+
+a <- summary(IPmodel4)
+pval <- p_format(pf(a$fstatistic[1],a$fstatistic[2],a$fstatistic[3],lower.tail=FALSE), digits=3, accuracy = 0.001, leading.zero=FALSE)
+table3data[6,8] <- paste0(round(a$fstatistic[1],digits=2), ' (',a$fstatistic[2],',',a$fstatistic[3],'), ',pval)
+
+a <- anova(EAmodel0,EAmodel1)
+table3data[3,3] <- paste0(round(a[2,5],digits=2),', ',p_format(a[2,6],digits=3,accuracy=0.001,leading.zero=F))
+
+a <- anova(EAmodel1,EAmodel2)
+table3data[4,3] <- paste0(round(a[2,5],digits=2),', ',p_format(a[2,6],digits=2,accuracy=0.001,leading.zero=F))
+
+a <- anova(EAmodel2,EAmodel3)
+table3data[5,3] <- paste0(round(a[2,5],digits=2),', ',p_format(a[2,6],digits=3,accuracy=0.001,leading.zero=F))
+
+a <- anova(EAmodel3,EAmodel4)
+table3data[6,3] <- paste0(round(a[2,5],digits=2),', ',p_format(a[2,6],digits=3,accuracy=0.001,leading.zero=F))
+
+a <- anova(IAmodel0,IAmodel1)
+table3data[3,5] <- paste0(round(a[2,5],digits=2),', ',p_format(a[2,6],digits=3,accuracy=0.001,leading.zero=F))
+
+a <- anova(IAmodel1,IAmodel2)
+table3data[4,5] <- paste0(round(a[2,5],digits=2),', ',p_format(a[2,6],digits=3,accuracy=0.001,leading.zero=F))
+
+a <- anova(IAmodel2,IAmodel3)
+table3data[5,5] <- paste0(round(a[2,5],digits=2),', ',p_format(a[2,6],digits=3,accuracy=0.001,leading.zero=F))
+
+a <- anova(IAmodel3,IAmodel4)
+table3data[6,5] <- paste0(round(a[2,5],digits=2),', ',p_format(a[2,6],digits=3,accuracy=0.001,leading.zero=F))
+
+
+a <- anova(EPmodel0,EPmodel1)
+table3data[3,7] <- paste0(round(a[2,5],digits=2),', ',p_format(a[2,6],digits=2,accuracy=0.001,leading.zero=F))
+
+a <- anova(EPmodel1,EPmodel2)
+table3data[4,7] <- paste0(round(a[2,5],digits=2),', ',p_format(a[2,6],digits=3,accuracy=0.001,leading.zero=F))
+
+a <- anova(EPmodel2,EPmodel3)
+table3data[5,7] <- paste0(round(a[2,5],digits=2),', ',p_format(a[2,6],digits=3,accuracy=0.001,leading.zero=F))
+
+a <- anova(EPmodel3,EPmodel4)
+table3data[6,7] <- paste0(round(a[2,5],digits=2),', ',p_format(a[2,6],digits=3,accuracy=0.001,leading.zero=F))
+
+
+a <- anova(IPmodel0,IPmodel1)
+table3data[3,9] <- paste0(round(a[2,5],digits=2),', ',p_format(a[2,6],digits=3,accuracy=0.001,leading.zero=F))
+
+a <- anova(IPmodel1,IPmodel2)
+table3data[4,9] <- paste0(round(a[2,5],digits=2),', ',p_format(a[2,6],digits=2,accuracy=0.001,leading.zero=F))
+
+a <- anova(IPmodel2,IPmodel3)
+table3data[5,9] <- paste0(round(a[2,5],digits=2),', ',p_format(a[2,6],digits=3,accuracy=0.001,leading.zero=F))
+
+a <- anova(IPmodel3,IPmodel4)
+table3data[6,9] <- paste0(round(a[2,5],digits=2),', ',p_format(a[2,6],digits=3,accuracy=0.001,leading.zero=F))
+
+knitr::kable(table3data, booktabs = T, col.names = NULL, caption='Regression Series 1 (AQ entered in Step 4).', align='lllllllll') %>%
+  row_spec(2, hline_after=T) %>%
+ kableExtra::add_header_above(c('','Total N (ASC,TD) = 174 (77, 97)'=2,'Total N (ASC,TD) = 170 (75, 95)'=2,'Total N (ASC,TD) = 174 (77, 97)'=2,'Total N (ASC,TD) = 176 (78, 98)'=2),bold=F,align='l') %>%
+  kableExtra::add_header_above(c('','Emotion Attribution'=2,'Identity Attribution'=2,'Emotion PSE'=2,'Identity PSE'=2),bold=F,align='l',line=F) %>% 
+  kable_styling(latex_options='HOLD_position',font_size=5)
+
+```
 
 Together, these results suggest that neither autistic nor alexithymic traits explain a significant amount of variance in face processing abilities after demographic variables are accounted for. 
+
+``` {r table4}
+
+table4data <- data.frame(matrix(0,nrow=32,ncol=5))
+
+colnames(table4data) <- c('Model','','Beta','t','p-value')
+table4data[,1] <- ''
+table4data[c(1,7,14,23),3] <- ''
+table4data[c(1,7,14,23),1] <- 1:4
+table4data[,2] <- c('(Constant)','Age','Male gender','Other gender','Asian ethnicity','Mixed ethnicity','(Constant)','Age','Male gender','Other gender','Asian ethnicity','Mixed ethnicity','TAS-TOTAL','(Constant)','Age','Male gender','Other gender','Asian ethnicity','Mixed ethnicity','TAS-TOTAL','HADS Anxiety','HADS Depression','(Constant)','Age','Male gender','Other gender','Asian ethnicity','Mixed ethnicity','TAS-TOTAL','HADS Anxiety','HADS Depression','AQ')
+
+betas <- lm.beta(EPmodel1)
+table4data[2:6,3] <- round(betas$standardized.coefficients[2:6],digits=3)
+
+betas <- lm.beta(EPmodel2)
+table4data[8:13,3] <- round(betas$standardized.coefficients[c(2:6,8)],digits=3)
+
+betas <- lm.beta(EPmodel3)
+table4data[15:22,3] <- round(betas$standardized.coefficients[c(2:6,8:10)],digits=3)
+
+betas <- lm.beta(EPmodel4)
+table4data[24:32,3] <- round(betas$standardized.coefficients[c(2:6,8:11)],digits=3)
+
+vals <- summary(EPmodel1)$coefficients
+table4data[1:6,4] <- round(vals[,3],digits=3)
+table4data[1:6,5] <- p_format(vals[,4], digits=1, accuracy = 0.001, leading.zero=FALSE)
+
+vals <- summary(EPmodel2)$coefficients
+table4data[7:13,4] <- round(vals[,3],digits=3)
+table4data[7:13,5] <- p_format(vals[,4], digits=1, accuracy = 0.001, leading.zero=FALSE)
+
+vals <- summary(EPmodel3)$coefficients
+table4data[14:22,4] <- round(vals[,3],digits=3)
+table4data[14:22,5] <- p_format(vals[,4], digits=1, accuracy = 0.001, leading.zero=FALSE)
+
+vals <- summary(EPmodel4)$coefficients
+table4data[23:32,4] <- round(vals[,3],digits=3)
+table4data[23:32,5] <- p_format(vals[,4], digits=1, accuracy = 0.001, leading.zero=FALSE)
+
+knitr::kable(table4data, booktabs = T,  caption='Coefficients for Emotion PSE Regression Series 1 (AQ entered in Step 4).', align='llrrr') %>%
+  kable_styling(latex_options='HOLD_position')
+
+```
 
 ## The role of autism status and autism self-identification in predicting face processing {.unnumbered}
 
@@ -197,8 +638,15 @@ The statistics for the regressions with the TAS-8 measure are reported in the Su
 
 ## Unregistered analyses: The role of gender identity in emotion perception {.unnumbered}
 
-While neither alexithymia nor autistic traits/status were significant predictors of our face processing variables in our analyses, gender did emerge as a significant predictor of emotion PSE scores in the above analyses. Follow-up comparisons comparing emotion PSE between participants who we male, female or selected “other” as their gender showed that the other group had significantly lower emotion PSE scores (N = 16, Mdn = .47) compared to both males (N = 74, Mdn = .49) and females (N = 88, Mdn = .50): Kruskal-Wallis H (2) = 9.52, p = .009. 
+``` {r genderanalysis}
 
+PSEgender <- by(data$EMOPSE,data$Gender_recode,summary)
+gendercount <- table(data$Gender_recode)
+kwh <- kruskal.test(EMOPSE ~ Gender_recode, data = data)
+
+```
+
+While neither alexithymia nor autistic traits/status were significant predictors of our face processing variables in our analyses, gender did emerge as a significant predictor of emotion PSE scores in the above analyses. Follow-up comparisons comparing emotion PSE between participants who we male, female or selected “other” as their gender showed that the other group had significantly lower emotion PSE scores (N = `r gendercount[3]`, Mdn = `r round(unlist(PSEgender[3])[3],digits=2)`) compared to both males (N = `r gendercount[2]`, Mdn = `r round(unlist(PSEgender[2])[3],digits=2)`) and females (N = `r gendercount[1]`, Mdn = `r round(unlist(PSEgender[1])[3],digits=2)`): Kruskal-Wallis H (`r kwh$parameter`) = `r round(kwh$statistic,digits=2)`, *p* = `r p_format(kwh$p.value,digits=1,leading.zero=F)`.
 
 # Discussion {.unnumbered}
 

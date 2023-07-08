@@ -89,6 +89,20 @@
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \usepackage{caption}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -186,7 +200,43 @@ To be comparable to the data collected from this control group, we aimed to coll
 
 Similar methods were used to recruit our autistic sample, with the exception of Prolific, plus via the Autistica research network. Participants needed to be aged 18 years and over. Both participants with clinically diagnosed ASC or those who self-identify as autistic were welcomed into the study: we recognise that for certain individuals a formal diagnosis can be hard to obtain, especially in adults and females, as females tend to present differently to males, and ASC may be `missed' in adults who were not identified as children (\protect\hyperlink{ref-gould2011a}{Gould and Ashton-Smith, 2011}; \protect\hyperlink{ref-murphy2016a}{Murphy et al., 2016}). Therefore, we invited invite both individuals who self-identify as autistic, and those who have received a formal diagnosis to participate. Participants were asked whether they have received a formal diagnosis or self-identify as autistic, to establish whether self-identification is associated with our variables of interest.
 
-Table 1 summarises the participants' characteristics.
+Table \ref{tab:table1} summarises the participants' characteristics.
+
+\begin{table}[H]
+
+\caption{\label{tab:table1}Participant Characteristics.}
+\centering
+\begin{tabular}[t]{llll}
+\toprule
+ & Full Sample & Autistic Sample & Non-autistic Sample\\
+ & (N = 178) & (N = 80) & (N = 98)\\
+\midrule
+Gender & N Female = 88 & N Female = 48 & N Female = 40\\
+ & N Male = 74 & N Male = 21 & N Male = 53\\
+ & N Other = 16 & N Other = 11 & N Other = 5\\
+\addlinespace
+ &  &  \vphantom{5} & \\
+Age & 33.14 (13.06) & 41.02 (13.07) & 26.7 (8.88)\\
+ &  &  \vphantom{4} & \\
+Ethnicity & N Asian = 10 & N Asian = 3 & N Asian = 7\\
+ & N Black = 1 & N Black = 1 & N Mixed = 1\\
+\addlinespace
+ & N Mixed = 4 & N Mixed = 3 & N White = 90\\
+ & N White = 163 & N White = 73 & \\
+ &  &  \vphantom{3} & \\
+HADS-Depression & 8.94 (2.1) & 9.25 (2.12) & 8.68 (2.06)\\
+ &  &  \vphantom{2} & \\
+\addlinespace
+HADS-Anxiety & 9.93 (2.99) & 8.91 (2.76) & 10.77 (2.93)\\
+ &  &  \vphantom{1} & \\
+AQ-28 & 74.73 (15.31) & 86.96 (11.06) & 64.74 (10.21)\\
+ &  &  & \\
+TAS-20 & 55.68 (12.86) & 60.88 (12.5) & 51.44 (11.58)\\
+\bottomrule
+\multicolumn{4}{l}{\textsuperscript{} For non-category data, statistics reported are means with standard}\\
+\multicolumn{4}{l}{deviations in parentheses.}\\
+\end{tabular}
+\end{table}
 
 \hypertarget{tasks-and-materials}{%
 \subsection*{Tasks and materials}\label{tasks-and-materials}}
@@ -210,7 +260,7 @@ Given that this study was conducted online away from experimenter supervision, w
 
 Self-report measures were used for capturing autistic traits, alexithymia traits and anxiety and depression symptoms.
 
-The Hospital Anxiety and Depression scale (HADS, \protect\hyperlink{ref-zigmond1983a}{Zigmond and Snaith, 1983}) consists of seven questions for anxiety and seven questions for depression. Depression and anxiety scales are scored separately. The HADS has been shown to perform well in measuring anxiety and depression symptoms in non-clinical samples as well as clinical samples (\protect\hyperlink{ref-bjelland2002a}{Bjelland et al., 2002}), including the identification of anxiety and depression in autistic individuals, with good internal consistency and convergent validity for both the anxiety and depression scales (\protect\hyperlink{ref-uljarevic2013a}{Uljarevic and Hamilton, 2013}). The means, standard deviations and distribution of the HADS data for our data from typically developed adults confirm the measure is normally distributed, with suitable variation in scores that will allow for the exploration of the impacts of anxiety and depression on our variables of interest. For HADS anxiety, M = 10.87 (SD = 2.90). For HADS depression, M = 8.69 (SD = 1.94).
+The Hospital Anxiety and Depression scale (HADS, \protect\hyperlink{ref-zigmond1983a}{Zigmond and Snaith, 1983}) consists of seven questions for anxiety and seven questions for depression. Depression and anxiety scales are scored separately. The HADS has been shown to perform well in measuring anxiety and depression symptoms in non-clinical samples as well as clinical samples (\protect\hyperlink{ref-bjelland2002a}{Bjelland et al., 2002}), including the identification of anxiety and depression in autistic individuals, with good internal consistency and convergent validity for both the anxiety and depression scales (\protect\hyperlink{ref-uljarevic2013a}{Uljarevic and Hamilton, 2013}). The means, standard deviations and distribution of the HADS data for our data from typically developed adults confirm the measure is normally distributed, with suitable variation in scores that will allow for the exploration of the impacts of anxiety and depression on our variables of interest. For HADS anxiety, M = 10.77 (SD = 2.93). For HADS depression, M = 8.68 (SD = 2.06).
 
 The Toronto Alexithymia Scale (TAS-20, \protect\hyperlink{ref-bagby1994a}{Bagby et al., 1994}) consists of three subscales: difficulty describing feelings (reflected in 5 items), difficulty identifying feeling (7 items), and externally-oriented thinking (8 items). Research has shown that the TAS-20 has construct validity and provided evidence of the TAS-20 as a reliable measure of alexithymia (\protect\hyperlink{ref-bagby1994a}{Bagby et al., 1994}). Research also indicates it is suitable for use with individuals with ASC, showing string test re-test reliability and convergent validity with other measures such as the Bermond-Vorst Alexithymia Questionnaire (\protect\hyperlink{ref-berthoz2005a}{Berthoz and Hill, 2005}; \protect\hyperlink{ref-zech1999a}{Zech et al., 1999}). The TAS-20 has also been previously used in autism and emotion recognition research (e.g. \protect\hyperlink{ref-cook2013a}{Cook et al., 2013}).
 
@@ -251,7 +301,7 @@ A previous meta-analysis by Uljarevic and Hamilton (\protect\hyperlink{ref-uljar
 
 A priori analyses were carried out to establish the required sample size for a regression analysis, which will be our core hypothesis-testing statistical procedure. The power analysis was carried out using the software G*Power (\protect\hyperlink{ref-faul2009a}{Faul et al., 2009}), with 1 number of tested predictors and 6 total predictors, and an effect size (\(f^2\)) was 0.15. This power analyses thus tests the power for a predictor to reveal a significant independent contribution to a model, over and above previous entered predictors. Results showed that a sample size of 73 participants would be needed for a significance level of 0.05 and the level of power at 0.90. Also, power analyses states that a sample size of 67 would be required to establish a correlation between emotion recognition and the TAS-20 (the alexithymia measure).
 
-Our first sample of non-autistic participants was a sample of 98 participant, (7 of which were considered outliers in our preliminary analyses). We intended to collect at least 100 complete datasets from our autistic sample, and at least 90 datasets that survive removal due to attention check fails, being an outlier, or poor function fit. As noted in our Participants section above, were were unable to achieve this, but osur final sample was 178 participants, after removing incomplete datasets and individuals who failed the attention check. This sample size should still negate any issues with multi-collinearity, and inflation of previous estimate due to publication bias. As previously noted, we included those who self-identify as autistic in our autistic sample in order to aid in recruiting our goal of at least 100 participants. Also, we did not formally checking participants for their clinical diagnosis: as we cannot verify who has a formal diagnosis of autism, we felt it practical to allow people who self-identify as autistic to take part and just ask them if they are or are not formally diagnosed.
+Our first sample of non-autistic participants was a sample of 98 participants, (7 of which were considered outliers in our preliminary analyses). We intended to collect at least 100 complete datasets from our autistic sample, and at least 90 datasets that survive removal due to attention check fails, being an outlier, or poor function fit. As noted in our Participants section above, were were unable to achieve this, but our final sample was 178 participants, after removing incomplete datasets and individuals who failed the attention check. This sample size should still negate any issues with multi-collinearity, and inflation of previous estimate due to publication bias. As previously noted, we included those who self-identify as autistic in our autistic sample in order to aid in recruiting our goal of at least 100 participants. Also, we did not formally checking participants for their clinical diagnosis: as we cannot verify who has a formal diagnosis of autism, we felt it practical to allow people who self-identify as autistic to take part and just ask them if they are or are not formally diagnosed.
 
 \hypertarget{results}{%
 \section*{Results}\label{results}}
@@ -259,15 +309,118 @@ Our first sample of non-autistic participants was a sample of 98 participant, (7
 
 As per our pre-registered analysis plan, we conducted all analyses with outliers excluded and included. In the below sections are the results when outliers were excluded (using a Cook's Distance threshold of 0.022, a threshold applied for each regression independently, as Cook's Distances are calculated for each regression separately). Please see the Supplementary Materials for Results with outliers included, but in summary when all participants were included no regression model was significant, at any step or for any dependent variable. While some predictors were correlated with each other (see Table 2), all variance inflation factors were below a conservative threshold of 2.5, meaning we had no indications of multicollinearity within the data.
 
+\begin{table}[H]
+
+\caption{\label{tab:table2}Correlations between alexithymia traits, autistic traits, depression and anxiety symptoms and face processing variables.}
+\centering
+\fontsize{8}{10}\selectfont
+\begin{tabular}[t]{lllllllll}
+\toprule
+ &  &  &  &  &  &  & Emotion & Identity\\
+ & TAS- & AQ & HADS & HADS & Emotion PSE & Identity PSE & attribution & attribution\\
+ & TOTAL &  & Depression & Anxiety & (N=174) & (N=176) & (N=174) & (N=170)\\
+\midrule
+TAS-TOTAL &  & .617 & .076 & -0.308 & 0.023 & 0.115 & 0.093 & 0.042\\
+ &  & p<.001 & p=.155 & p<.001 & p=.38 & p=.064 & p=.112 & p=.292\\
+\addlinespace
+ &  &  &  &  &  &  &  \vphantom{2} & \\
+AQ & .617 &  & .149 & -0.326 & 0.033 & 0.049 & 0.137 & 0.106\\
+ & p<.001 &  & p=.023 & p<.001 & p=.334 & p=.258 & p=.036 & p=.085\\
+ &  &  &  &  &  &  &  \vphantom{1} & \\
+HADS Depression & .076 & .149 &  & -0.024 & 0.132 & 0.079 & -0.08 & -0.142\\
+\addlinespace
+ & p=.155 & p=.023 &  & p=.374 & p=.041 & p=.148 & p=.146 & p=.032\\
+ &  &  &  &  &  &  &  & \\
+HADS Anxiety & -0.308 & -0.326 & -0.024 &  & 0.024 & 0.004 & -0.032 & -0.019\\
+ & p<.001 & p<.001 & p=.374 &  & p=.375 & p=.48 & p=.336 & p=.402\\
+\bottomrule
+\multicolumn{9}{l}{\textsuperscript{} All correlations are Spearman’s Rank and one-tailed. Note that correlations with the face}\\
+\multicolumn{9}{l}{processing variables are with outliers removed, as per Cook’s Distance threshold rules, generated}\\
+\multicolumn{9}{l}{for regression series 1 (AQ in final step).}\\
+\end{tabular}
+\end{table}
+
 \hypertarget{the-role-of-alexithymia-and-autistic-traits-in-predicting-face-processing}{%
 \subsection*{The role of alexithymia and autistic traits in predicting face processing}\label{the-role-of-alexithymia-and-autistic-traits-in-predicting-face-processing}}
 \addcontentsline{toc}{subsection}{The role of alexithymia and autistic traits in predicting face processing}
 
 As per our analysis plan, we conducted a series of hierarchical regressions to test the roles of alexithymia versus autistic traits on face processing abilities. Figure 1 summarises the steps of our regressions. Table 2 includes the correlations between the face processing variables, depression and anxiety scores, autistic traits and alexithymic traits.
 
-In our first series of regressions, a continuous measure of autistic traits, the AQ28, was entered in the final step. Table 3 summarises the results of this regression series. For emotion attribution thresholds, identity attribution thresholds, and identity PSE, no model was significant at any step. For emotion PSE, the regression model was significant at steps 1s and 2 (although the addition of the TAS in step 2 did not lead to a significant increase in the variance explained). The only significant predictor was gender, specifically the dummy variable indicating ``other'' gender. See sub-section ``The role of gender'' for follow up tests on gender effects on emotion PSE. Table 4 summarises the coefficients for the regressions with significant models.
+In our first series of regressions, a continuous measure of autistic traits, the AQ28, was entered in the final step. Table \ref{tab:table3} summarises the results of this regression series. For emotion attribution thresholds, identity attribution thresholds, and identity PSE, no model was significant at any step. For emotion PSE, the regression model was significant at steps 1s and 2 (although the addition of the TAS in step 2 did not lead to a significant increase in the variance explained). The only significant predictor was gender, specifically the dummy variable indicating ``other'' gender. See sub-section ``The role of gender'' for follow up tests on gender effects on emotion PSE. Table 4 summarises the coefficients for the regressions with significant models.
+
+\begin{table}[H]
+
+\caption{\label{tab:table3}Regression Series 1 (AQ entered in Step 4).}
+\centering
+\fontsize{5}{7}\selectfont
+\begin{tabular}[t]{lllllllll}
+\toprule
+\multicolumn{1}{l}{} & \multicolumn{2}{l}{Emotion Attribution} & \multicolumn{2}{l}{Identity Attribution} & \multicolumn{2}{l}{Emotion PSE} & \multicolumn{2}{l}{Identity PSE} \\
+\multicolumn{1}{l}{} & \multicolumn{2}{l}{Total N (ASC,TD) = 174 (77, 97)} & \multicolumn{2}{l}{Total N (ASC,TD) = 170 (75, 95)} & \multicolumn{2}{l}{Total N (ASC,TD) = 174 (77, 97)} & \multicolumn{2}{l}{Total N (ASC,TD) = 176 (78, 98)} \\
+\cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5} \cmidrule(l{3pt}r{3pt}){6-7} \cmidrule(l{3pt}r{3pt}){8-9}
+ &  & F change, &  & F change, &  & F change, &  & F change,\\
+ & F (Df), p-value & p-value & F (Df), p-value & p-value & F (Df), p-value & p-value & F (Df), p-value & p-value\\
+\midrule
+Model 1 & 1.63 (5,168), .156 & 1.63, .156 & 0.19 (5,164), .968 & 0.19, .968 & 2.4 (5,168), .039 & 2.4, .039 & 1.46 (5,170), .207 & 1.46, .207\\
+Model 2 & 1.98 (6,167), .071 & 3.63, .059 & 0.57 (6,163), .753 & 2.49, .116 & 2.34 (6,167), .034 & 1.96, .163 & 1.69 (6,169), .126 & 2.79, .097\\
+Model 3 & 1.57 (8,165), .136 & 0.39, .676 & 0.93 (8,161), .49 & 2, .139 & 1.96 (8,165), .055 & 0.83, .439 & 1.26 (8,167), .27 & 0.01, .988\\
+\addlinespace
+Model 4 & 1.46 (9,164), .165 & 0.62, .432 & 0.93 (9,160), .505 & 0.86, .354 & 1.81 (9,164), .07 & 0.67, .415 & 1.11 (9,166), .356 & 0.03, .868\\
+\bottomrule
+\end{tabular}
+\end{table}
 
 Together, these results suggest that neither autistic nor alexithymic traits explain a significant amount of variance in face processing abilities after demographic variables are accounted for.
+
+\begin{table}[H]
+
+\caption{\label{tab:table4}Coefficients for Emotion PSE Regression Series 1 (AQ entered in Step 4).}
+\centering
+\begin{tabular}[t]{llrrr}
+\toprule
+Model &  & Beta & t & p-value\\
+\midrule
+1 & (Constant) &  & 39.929 & <.001\\
+ & Age & -0.119 & -1.588 & .114\\
+ & Male gender & -0.134 & -1.717 & .088\\
+ & Other gender & -0.218 & -2.792 & .006\\
+ & Asian ethnicity & 0.053 & 0.712 & .477\\
+\addlinespace
+ & Mixed ethnicity & 0.018 & 0.239 & .812\\
+2 & (Constant) &  & 23.210 & <.001\\
+ & Age & -0.136 & -1.796 & .074\\
+ & Male gender & -0.141 & -1.803 & .073\\
+ & Other gender & -0.225 & -2.887 & .004\\
+\addlinespace
+ & Asian ethnicity & 0.061 & 0.809 & .419\\
+ & Mixed ethnicity & 0.01 & 0.130 & .896\\
+ & TAS-TOTAL & 0.106 & 1.402 & .163\\
+3 & (Constant) &  & 13.604 & <.001\\
+ & Age & -0.138 & -1.808 & .072\\
+\addlinespace
+ & Male gender & -0.15 & -1.861 & .065\\
+ & Other gender & -0.225 & -2.880 & .005\\
+ & Asian ethnicity & 0.049 & 0.652 & .515\\
+ & Mixed ethnicity & 0.001 & 0.008 & .993\\
+ & TAS-TOTAL & 0.108 & 1.347 & .18\\
+\addlinespace
+ & HADS Anxiety & 0.026 & 0.322 & .748\\
+ & HADS Depression & 0.093 & 1.230 & .22\\
+4 & (Constant) &  & 12.636 & <.001\\
+ & Age & -0.16 & -1.977 & .05\\
+ & Male gender & -0.133 & -1.588 & .114\\
+\addlinespace
+ & Other gender & -0.232 & -2.945 & .004\\
+ & Asian ethnicity & 0.05 & 0.659 & .511\\
+ & Mixed ethnicity & 0.004 & 0.055 & .956\\
+ & TAS-TOTAL & 0.057 & 0.552 & .581\\
+ & HADS Anxiety & 0.035 & 0.424 & .672\\
+\addlinespace
+ & HADS Depression & 0.083 & 1.084 & .28\\
+ & AQ & 0.091 & 0.817 & .415\\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \hypertarget{the-role-of-autism-status-and-autism-self-identification-in-predicting-face-processing}{%
 \subsection*{The role of autism status and autism self-identification in predicting face processing}\label{the-role-of-autism-status-and-autism-self-identification-in-predicting-face-processing}}
@@ -301,7 +454,7 @@ The statistics for the regressions with the TAS-8 measure are reported in the Su
 \subsection*{Unregistered analyses: The role of gender identity in emotion perception}\label{unregistered-analyses-the-role-of-gender-identity-in-emotion-perception}}
 \addcontentsline{toc}{subsection}{Unregistered analyses: The role of gender identity in emotion perception}
 
-While neither alexithymia nor autistic traits/status were significant predictors of our face processing variables in our analyses, gender did emerge as a significant predictor of emotion PSE scores in the above analyses. Follow-up comparisons comparing emotion PSE between participants who we male, female or selected ``other'' as their gender showed that the other group had significantly lower emotion PSE scores (N = 16, Mdn = .47) compared to both males (N = 74, Mdn = .49) and females (N = 88, Mdn = .50): Kruskal-Wallis H (2) = 9.52, p = .009.
+While neither alexithymia nor autistic traits/status were significant predictors of our face processing variables in our analyses, gender did emerge as a significant predictor of emotion PSE scores in the above analyses. Follow-up comparisons comparing emotion PSE between participants who we male, female or selected ``other'' as their gender showed that the other group had significantly lower emotion PSE scores (N = 16, Mdn = 0.47) compared to both males (N = 74, Mdn = 0.49) and females (N = 88, Mdn = 0.5): Kruskal-Wallis H (2) = 9.52, \emph{p} = .009.
 
 \hypertarget{discussion}{%
 \section*{Discussion}\label{discussion}}
