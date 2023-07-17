@@ -1263,7 +1263,7 @@ table9data[7,6] <- paste0(mwu$statistic, ', ', mwz2[[1]][3],' ', p_format(mwu$p.
 
 emotas <- by(data$HANX7,data$TAS_Group,summary)
 groupcount <- table(data$TAS_Group)
-mwu <- wilcox.test(HANX7 ~ TAS_Group, data = data)
+mwu <- wilcox.test(data$HANX7[which(data$TAS_Group==1)],data$HANX7[which(data$TAS_Group==0)])
 mwz <- capture.output(wilcox_test(data$HANX7 ~ as.factor(data$TAS_Group)))
 mwz2 <- strsplit(gsub("([*]+$)|[<]", "", mwz[5]), "\\s+")
 table9data[8,2] <- round(unlist(emotas[[2]])[3],digits=4)
