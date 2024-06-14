@@ -1,6 +1,6 @@
 These materials are a computationally reproducible version of the paper:
 
-Baxter & Hobson (2023). The role of emotional factors in face processing abilities in Autism Spectrum Conditions.
+Baxter & Hobson (2024). The role of emotional factors in face processing abilities in autism spectrum conditions. Research in Autism Spectrum Disorders, 115: 102400, https://doi.org/10.1016/j.rasd.2024.102400
 
 The file manuscript.Rmd is an R markdown file that will perform all analyses and table creation, and produce a pdf version of the manuscript.
 
